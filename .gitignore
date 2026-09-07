@@ -1,0 +1,33 @@
+# Virtual environments
+venv/
+.env/
+genai-ocr-p2p-protyping/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.local
+
+# Data files
+*.csv
+*.xlsx
+*.parquet
+
+# Output folders
+output/
+temp/
