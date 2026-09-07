@@ -1,0 +1,2139 @@
+{
+  "source": "C:\\Users\\vmodalax\\OneDrive - Intel Corporation\\Desktop\\GenAI-OCR-P2P-Protyping\\Supporting Documents\\LE763 Supplier List.xlsx",
+  "threshold": 90,
+  "count_suppliers": 137,
+  "count_aliases": 145,
+  "translated_count": 4,
+  "collisions": [
+    [
+      "hp technology vietnam company limited",
+      [
+        "1000105502",
+        "1000140944"
+      ]
+    ]
+  ],
+  "suppliers": [
+    {
+      "supplier_id": "1000142571",
+      "vietnamese_name": null,
+      "english_name": "SAI GON FABRICATION COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "sai gon fabrication company limited"
+    },
+    {
+      "supplier_id": "1000023220",
+      "vietnamese_name": null,
+      "english_name": "Box-Pak (Vietnam) Co., Ltd.",
+      "normalized_vietnamese": "",
+      "normalized_english": "box pak vietnam company limited"
+    },
+    {
+      "supplier_id": "1000091037",
+      "vietnamese_name": null,
+      "english_name": "SVN AUTOMATION CO., LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "svn automation company limited"
+    },
+    {
+      "supplier_id": "1000074183",
+      "vietnamese_name": null,
+      "english_name": "Interworld Vietnam Import Export Tr",
+      "normalized_vietnamese": "",
+      "normalized_english": "interworld vietnam import export tr"
+    },
+    {
+      "supplier_id": "1000077171",
+      "vietnamese_name": null,
+      "english_name": "Manpower Vietnam Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "manpower vietnam company limited"
+    },
+    {
+      "supplier_id": "1000052774",
+      "vietnamese_name": null,
+      "english_name": "A Chi Son Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "a chi son joint stock company"
+    },
+    {
+      "supplier_id": "1000070514",
+      "vietnamese_name": null,
+      "english_name": "HUYNH DUC MANUFACTURING TRADING AND SERVICES LTD.",
+      "normalized_vietnamese": "",
+      "normalized_english": "huynh duc manufacturing trading and services limited"
+    },
+    {
+      "supplier_id": "1000115432",
+      "vietnamese_name": null,
+      "english_name": "M AND S Industry Technology Service",
+      "normalized_vietnamese": "",
+      "normalized_english": "m and s industry technology service"
+    },
+    {
+      "supplier_id": "1000055698",
+      "vietnamese_name": null,
+      "english_name": "Loriot Industrial Co.,Ltd.",
+      "normalized_vietnamese": "",
+      "normalized_english": "loriot industrial company limited"
+    },
+    {
+      "supplier_id": "1000059008",
+      "vietnamese_name": null,
+      "english_name": "Chasen Transport Logistics Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "chasen transport logistics company"
+    },
+    {
+      "supplier_id": "1000016044",
+      "vietnamese_name": null,
+      "english_name": "Solstice Electronic Materials, Inc.",
+      "normalized_vietnamese": "",
+      "normalized_english": "solstice electronic materials incorporated"
+    },
+    {
+      "supplier_id": "1000051026",
+      "vietnamese_name": null,
+      "english_name": "Schenker Vietnam Co., Ltd.",
+      "normalized_vietnamese": "",
+      "normalized_english": "schenker vietnam company limited"
+    },
+    {
+      "supplier_id": "1000060266",
+      "vietnamese_name": null,
+      "english_name": "Uwc Precision Engineering Company Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "uwc precision engineering company limited"
+    },
+    {
+      "supplier_id": "1000140125",
+      "vietnamese_name": null,
+      "english_name": "GREEN SPEED JOINT STOCK COMPANY",
+      "normalized_vietnamese": "",
+      "normalized_english": "green speed joint stock company"
+    },
+    {
+      "supplier_id": "1000124528",
+      "vietnamese_name": null,
+      "english_name": "Fuji Cac Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "fuji cac joint stock company"
+    },
+    {
+      "supplier_id": "1000089444",
+      "vietnamese_name": null,
+      "english_name": "SA PAI SERVICE TRADING PRODUCTION C",
+      "normalized_vietnamese": "",
+      "normalized_english": "sa pai service trading production c"
+    },
+    {
+      "supplier_id": "1000147773",
+      "vietnamese_name": null,
+      "english_name": "Inventory Management Solutions Co.",
+      "normalized_vietnamese": "",
+      "normalized_english": "inventory management solutions company"
+    },
+    {
+      "supplier_id": "1000069121",
+      "vietnamese_name": null,
+      "english_name": "CT TNHH TM VA DV THIEN NGHI",
+      "normalized_vietnamese": "",
+      "normalized_english": "ct tnhh tm va dv thien nghi"
+    },
+    {
+      "supplier_id": "1000022429",
+      "vietnamese_name": null,
+      "english_name": "Air Liquide Vietnam Co.,ltd Air Liquide Vietnam Co.,ltd, Bac Ninh City",
+      "normalized_vietnamese": "",
+      "normalized_english": "air liquide vietnam company limited air liquide vietnam company limited bac ninh city"
+    },
+    {
+      "supplier_id": "1000450613",
+      "vietnamese_name": null,
+      "english_name": "FEYANA COMPANY LIMITED FEYANA COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "feyana company limited feyana company limited"
+    },
+    {
+      "supplier_id": "1000067450",
+      "vietnamese_name": null,
+      "english_name": "PHAM NGUYEN TRADING CO.,LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "pham nguyen trading company limited"
+    },
+    {
+      "supplier_id": "1000055376",
+      "vietnamese_name": null,
+      "english_name": "Jones Lang Lasalle Vietnam Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "jones lang lasalle vietnam company"
+    },
+    {
+      "supplier_id": "1000153667",
+      "vietnamese_name": null,
+      "english_name": "OJITEX (VIETNAM) CO., LTD.",
+      "normalized_vietnamese": "",
+      "normalized_english": "ojitex vietnam company limited"
+    },
+    {
+      "supplier_id": "1000093501",
+      "vietnamese_name": null,
+      "english_name": "Jebsen & Jessen Packaging VietNam Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "jebsen jessen packaging vietnam company"
+    },
+    {
+      "supplier_id": "1000087542",
+      "vietnamese_name": "Công Ty Tnhh Mễ Đình (Vietnam)",
+      "english_name": "Me Dinh Company Limited",
+      "normalized_vietnamese": "cong ty tnhh me dinh vietnam",
+      "normalized_english": "me dinh company limited"
+    },
+    {
+      "supplier_id": "1000609334",
+      "vietnamese_name": null,
+      "english_name": "BOUSTEAD PROJECTS (VIETNAM) CO.,LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "boustead projects vietnam company limited"
+    },
+    {
+      "supplier_id": "1000609384",
+      "vietnamese_name": "CHI NHÁNH TỔNG CÔNG TY ĐIỆN LỰC THÀNH",
+      "english_name": "BRANCH OF THANH ELECTRICITY CORPORATION",
+      "normalized_vietnamese": "chi nhanh tong cong ty dien luc thanh",
+      "normalized_english": "branch of thanh electricity corporation"
+    },
+    {
+      "supplier_id": "1000010820",
+      "vietnamese_name": "VNPT THÀNH PHỐ HỒ CHÍ MINH",
+      "english_name": "VNPT Ho Chi Minh City",
+      "normalized_vietnamese": "vnpt thanh pho ho chi minh",
+      "normalized_english": "vnpt ho chi minh city"
+    },
+    {
+      "supplier_id": "1000402505",
+      "vietnamese_name": null,
+      "english_name": "WKK INDUSTRIES CO.,LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "wkk industries company limited"
+    },
+    {
+      "supplier_id": "1000007324",
+      "vietnamese_name": null,
+      "english_name": "SHINKO ELECTRIC INDUSTRIES CO., LTD,",
+      "normalized_vietnamese": "",
+      "normalized_english": "shinko electric industries company limited"
+    },
+    {
+      "supplier_id": "1000124975",
+      "vietnamese_name": null,
+      "english_name": "Saigon Hi-Tech Park Projects Manage",
+      "normalized_vietnamese": "",
+      "normalized_english": "saigon hi tech park projects manage"
+    },
+    {
+      "supplier_id": "1000472184",
+      "vietnamese_name": "Công Ty TNHH PTEC Solutions",
+      "english_name": "PTEC SOLUTIONS COMPANY LIMITED",
+      "normalized_vietnamese": "cong ty tnhh ptec solutions",
+      "normalized_english": "ptec solutions company limited"
+    },
+    {
+      "supplier_id": "1000015102",
+      "vietnamese_name": null,
+      "english_name": "Dhl Global Forwarding (Vietnam) Corporation",
+      "normalized_vietnamese": "",
+      "normalized_english": "dhl global forwarding vietnam corporation"
+    },
+    {
+      "supplier_id": "1000083274",
+      "vietnamese_name": null,
+      "english_name": "Saigon International General Hospital",
+      "normalized_vietnamese": "",
+      "normalized_english": "saigon international general hospital"
+    },
+    {
+      "supplier_id": "1000152234",
+      "vietnamese_name": null,
+      "english_name": "LOC KHANH VY COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "loc khanh vy company limited"
+    },
+    {
+      "supplier_id": "1000085296",
+      "vietnamese_name": null,
+      "english_name": "Dat Chi Technology Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "dat chi technology company limited"
+    },
+    {
+      "supplier_id": "1000088528",
+      "vietnamese_name": null,
+      "english_name": "INSEE Siam City Cement (Vietnam) Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "insee siam city cement vietnam limited"
+    },
+    {
+      "supplier_id": "1000073655",
+      "vietnamese_name": null,
+      "english_name": "Turner & Townsend Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "turner townsend company limited"
+    },
+    {
+      "supplier_id": "1000025025",
+      "vietnamese_name": null,
+      "english_name": "Hong Co Technology Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "hong company technology company limited"
+    },
+    {
+      "supplier_id": "1000066805",
+      "vietnamese_name": null,
+      "english_name": "Jentech Precision Industrial Co., LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "jentech precision industrial company limited"
+    },
+    {
+      "supplier_id": "1000023836",
+      "vietnamese_name": null,
+      "english_name": "Victoria Healthcare Medical Develop",
+      "normalized_vietnamese": "",
+      "normalized_english": "victoria healthcare medical develop"
+    },
+    {
+      "supplier_id": "1000080182",
+      "vietnamese_name": null,
+      "english_name": "Lidin Co., Ltd Life Development Investment Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "lidin company limited life development investment company"
+    },
+    {
+      "supplier_id": "1000144042",
+      "vietnamese_name": null,
+      "english_name": "Cbre (Vietnam) Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "cbre vietnam company limited"
+    },
+    {
+      "supplier_id": "1000126884",
+      "vietnamese_name": null,
+      "english_name": "Seven System Viet Nam Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "seven system viet nam joint stock company"
+    },
+    {
+      "supplier_id": "1000086386",
+      "vietnamese_name": null,
+      "english_name": "QUALITY ASSURANCE MANAGEMENT VIETNAM",
+      "normalized_vietnamese": "",
+      "normalized_english": "quality assurance management vietnam"
+    },
+    {
+      "supplier_id": "1000147437",
+      "vietnamese_name": null,
+      "english_name": "SEALED AIR VIETNAM COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "sealed air vietnam company limited"
+    },
+    {
+      "supplier_id": "1000142573",
+      "vietnamese_name": null,
+      "english_name": "PTEC SOLUTIONS SYSTEM CO.,LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "ptec solutions system company limited"
+    },
+    {
+      "supplier_id": "1000013312",
+      "vietnamese_name": null,
+      "english_name": "Senju Metal Industry Co., Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "senju metal industry company limited"
+    },
+    {
+      "supplier_id": "1000147771",
+      "vietnamese_name": null,
+      "english_name": "CONG TY CO PHAN KIEM DINH HUAN LUYE",
+      "normalized_vietnamese": "",
+      "normalized_english": "cong ty company phan kiem dinh huan luye"
+    },
+    {
+      "supplier_id": "1000110201",
+      "vietnamese_name": null,
+      "english_name": "Zone 2 Technical Safety Training Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "zone 2 technical safety training joint stock company"
+    },
+    {
+      "supplier_id": "1000094818",
+      "vietnamese_name": null,
+      "english_name": "Dong Tien Viet Manufacturing Trading Co. Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "dong tien viet manufacturing trading company limited"
+    },
+    {
+      "supplier_id": "1000094753",
+      "vietnamese_name": null,
+      "english_name": "Hung phu vinh co.ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "hung phu vinh company limited"
+    },
+    {
+      "supplier_id": "1000012214",
+      "vietnamese_name": null,
+      "english_name": "Lac Viet Computing Corporation",
+      "normalized_vietnamese": "",
+      "normalized_english": "lac viet computing corporation"
+    },
+    {
+      "supplier_id": "1000075052",
+      "vietnamese_name": null,
+      "english_name": "Micro Precision Calibration Vietnam",
+      "normalized_vietnamese": "",
+      "normalized_english": "micro precision calibration vietnam"
+    },
+    {
+      "supplier_id": "1000105502",
+      "vietnamese_name": null,
+      "english_name": "HP TECHNOLOGY VIETNAM COMPANY LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "hp technology vietnam company limited"
+    },
+    {
+      "supplier_id": "1000150890",
+      "vietnamese_name": null,
+      "english_name": "SCB Construction Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "scb construction joint stock company"
+    },
+    {
+      "supplier_id": "1000140944",
+      "vietnamese_name": null,
+      "english_name": "Hp Technology Vietnam Company Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "hp technology vietnam company limited"
+    },
+    {
+      "supplier_id": "1000017793",
+      "vietnamese_name": null,
+      "english_name": "Kpmg Tax And Advisory Limited Branch",
+      "normalized_vietnamese": "",
+      "normalized_english": "kpmg tax and advisory limited branch"
+    },
+    {
+      "supplier_id": "1000059140",
+      "vietnamese_name": null,
+      "english_name": "Quy Dau Tu Mao Hiem Cnc9",
+      "normalized_vietnamese": "",
+      "normalized_english": "quy dau tu mao hiem cnc9"
+    },
+    {
+      "supplier_id": "1000079456",
+      "vietnamese_name": null,
+      "english_name": "RAPI OFFICE SUPPLIES CO., LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "rapi office supplies company limited"
+    },
+    {
+      "supplier_id": "1000402511",
+      "vietnamese_name": null,
+      "english_name": "ASIA STORAGE TECHNOLOGY CO., LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "asia storage technology company limited"
+    },
+    {
+      "supplier_id": "1000150087",
+      "vietnamese_name": null,
+      "english_name": "NEFAB SOUTH VIETNAM CO., LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "nefab south vietnam company limited"
+    },
+    {
+      "supplier_id": "1000141956",
+      "vietnamese_name": null,
+      "english_name": "Da Bao Commercial Service Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "da bao commercial service limited"
+    },
+    {
+      "supplier_id": "1000487547",
+      "vietnamese_name": null,
+      "english_name": "BRANCH OF OMRON VIETNAM COMPANY LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "branch of omron vietnam company limited"
+    },
+    {
+      "supplier_id": "1000691825",
+      "vietnamese_name": null,
+      "english_name": "D&T Technical Development Trading",
+      "normalized_vietnamese": "",
+      "normalized_english": "d t technical development trading"
+    },
+    {
+      "supplier_id": "1000098649",
+      "vietnamese_name": null,
+      "english_name": "The British International School",
+      "normalized_vietnamese": "",
+      "normalized_english": "the british international school"
+    },
+    {
+      "supplier_id": "1000145101",
+      "vietnamese_name": null,
+      "english_name": "3M VIETNAM LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "3m vietnam limited"
+    },
+    {
+      "supplier_id": "1000105565",
+      "vietnamese_name": null,
+      "english_name": "Epe Packaging (Vietnam) Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "epe packaging vietnam company limited"
+    },
+    {
+      "supplier_id": "1000077884",
+      "vietnamese_name": null,
+      "english_name": "Hoang Sa Viet Investment and Development Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "hoang sa viet investment and development company"
+    },
+    {
+      "supplier_id": "1000052853",
+      "vietnamese_name": null,
+      "english_name": "RED STAR VIETNAM COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "red star vietnam company limited"
+    },
+    {
+      "supplier_id": "1000058320",
+      "vietnamese_name": null,
+      "english_name": "FPT IS COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "fpt is company limited"
+    },
+    {
+      "supplier_id": "1000002567",
+      "vietnamese_name": null,
+      "english_name": "SAMSUNG SEMICONDUCTOR, INC.",
+      "normalized_vietnamese": "",
+      "normalized_english": "samsung semiconductor incorporated"
+    },
+    {
+      "supplier_id": "1000689583",
+      "vietnamese_name": null,
+      "english_name": "Expertrans Global Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "expertrans global joint stock company"
+    },
+    {
+      "supplier_id": "1000145102",
+      "vietnamese_name": null,
+      "english_name": "SMC CORPORATION (VIETNAM) COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "smc corporation vietnam company limited"
+    },
+    {
+      "supplier_id": "1000081356",
+      "vietnamese_name": "Bệnh Viện Quân Dân Y Miền Đông",
+      "english_name": "Eastern Military and Civilian Hospital",
+      "normalized_vietnamese": "benh vien quan dan y mien dong",
+      "normalized_english": "eastern military and civilian hospital"
+    },
+    {
+      "supplier_id": "1000690978",
+      "vietnamese_name": "Chi nhánh Tổng công ty Du lịch Sài Gòn",
+      "english_name": "Branch of Saigon Tourism Corporation",
+      "normalized_vietnamese": "chi nhanh tong cong ty du lich sai gon",
+      "normalized_english": "branch of saigon tourism corporation"
+    },
+    {
+      "supplier_id": "1000013920",
+      "vietnamese_name": null,
+      "english_name": "LONG HAI SECURITY SERVICES JOINT STOCK COMPANY",
+      "normalized_vietnamese": "",
+      "normalized_english": "long hai security services joint stock company"
+    },
+    {
+      "supplier_id": "1000487691",
+      "vietnamese_name": null,
+      "english_name": "Vietnam Law Communication Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "vietnam law communication joint stock company"
+    },
+    {
+      "supplier_id": "1000150239",
+      "vietnamese_name": null,
+      "english_name": "TL TECHNOLOGIES AND SERVICE VIETNAM",
+      "normalized_vietnamese": "",
+      "normalized_english": "tl technologies and service vietnam"
+    },
+    {
+      "supplier_id": "1000006931",
+      "vietnamese_name": null,
+      "english_name": "Micron Semiconductor Asia Operation",
+      "normalized_vietnamese": "",
+      "normalized_english": "micron semiconductor asia operation"
+    },
+    {
+      "supplier_id": "1000132055",
+      "vietnamese_name": null,
+      "english_name": "Dayone Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "dayone joint stock company"
+    },
+    {
+      "supplier_id": "1000050793",
+      "vietnamese_name": null,
+      "english_name": "HOA DAO SUPPLY INDUSTRIAL SERVING",
+      "normalized_vietnamese": "",
+      "normalized_english": "hoa dao supply industrial serving"
+    },
+    {
+      "supplier_id": "1000139301",
+      "vietnamese_name": null,
+      "english_name": "Keyence Vietnam Co.,Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "keyence vietnam company limited"
+    },
+    {
+      "supplier_id": "1000011910",
+      "vietnamese_name": null,
+      "english_name": "Aem Singapore Pte Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "aem singapore private limited"
+    },
+    {
+      "supplier_id": "1000077072",
+      "vietnamese_name": null,
+      "english_name": "Baker & Mckenzie (Vietnam) Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "baker mckenzie vietnam limited"
+    },
+    {
+      "supplier_id": "1000027563",
+      "vietnamese_name": null,
+      "english_name": "Russin and Vecchi",
+      "normalized_vietnamese": "",
+      "normalized_english": "russin and vecchi"
+    },
+    {
+      "supplier_id": "1000126353",
+      "vietnamese_name": null,
+      "english_name": "Mettler-Toledo Viet Nam Limited Liability Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "mettler toledo viet nam limited liability company"
+    },
+    {
+      "supplier_id": "1000017763",
+      "vietnamese_name": null,
+      "english_name": "MT Scientific Equipment Co., Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "mt scientific equipment company limited"
+    },
+    {
+      "supplier_id": "1000016143",
+      "vietnamese_name": null,
+      "english_name": "Yokowo (Singapore) Pte Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "yokowo singapore private limited"
+    },
+    {
+      "supplier_id": "1000430389",
+      "vietnamese_name": null,
+      "english_name": "BrandPC Viet Nam Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "brandpc viet nam company limited"
+    },
+    {
+      "supplier_id": "1000428629",
+      "vietnamese_name": null,
+      "english_name": "PHONG VU TRADING - SERVICE CORPORATION",
+      "normalized_vietnamese": "",
+      "normalized_english": "phong vu trading service corporation"
+    },
+    {
+      "supplier_id": "1000012069",
+      "vietnamese_name": null,
+      "english_name": "The Indium Corporation of America",
+      "normalized_vietnamese": "",
+      "normalized_english": "the indium corporation of america"
+    },
+    {
+      "supplier_id": "1000022540",
+      "vietnamese_name": null,
+      "english_name": "The American Chamber of Commerce in Vietnam (AmCham Vietnam)",
+      "normalized_vietnamese": "",
+      "normalized_english": "the american chamber of commerce in vietnam amcham vietnam"
+    },
+    {
+      "supplier_id": "1000145191",
+      "vietnamese_name": null,
+      "english_name": "EOS IT MANAGEMENT SOLUTIONS COMPANY",
+      "normalized_vietnamese": "",
+      "normalized_english": "eos it management solutions company"
+    },
+    {
+      "supplier_id": "1000116499",
+      "vietnamese_name": null,
+      "english_name": "New Ocean Automation System Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "new ocean automation system company"
+    },
+    {
+      "supplier_id": "1000152406",
+      "vietnamese_name": null,
+      "english_name": "SOLUM VINA COMPANY",
+      "normalized_vietnamese": "",
+      "normalized_english": "solum vina company"
+    },
+    {
+      "supplier_id": "1000091586",
+      "vietnamese_name": null,
+      "english_name": "Thai Son Technology Development Co.",
+      "normalized_vietnamese": "",
+      "normalized_english": "thai son technology development company"
+    },
+    {
+      "supplier_id": "1000001961",
+      "vietnamese_name": null,
+      "english_name": "FEI COMPANY OF USA (S.E.A.) PTE LTD",
+      "normalized_vietnamese": "",
+      "normalized_english": "fei company of usa s e a private limited"
+    },
+    {
+      "supplier_id": "1000072827",
+      "vietnamese_name": null,
+      "english_name": "Modus Test LLC, Richardson",
+      "normalized_vietnamese": "",
+      "normalized_english": "modus test llc richardson"
+    },
+    {
+      "supplier_id": "1000013768",
+      "vietnamese_name": null,
+      "english_name": "Essai, Inc., Chandler",
+      "normalized_vietnamese": "",
+      "normalized_english": "essai incorporated chandler"
+    },
+    {
+      "supplier_id": "1000128652",
+      "vietnamese_name": null,
+      "english_name": "Ecolab Vietnam Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "ecolab vietnam company limited"
+    },
+    {
+      "supplier_id": "1000015836",
+      "vietnamese_name": null,
+      "english_name": "Ernst & Young Viet Nam Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "ernst young viet nam limited"
+    },
+    {
+      "supplier_id": "1000131124",
+      "vietnamese_name": null,
+      "english_name": "GREENVIET GREEN BUILDING CONSULTANCY",
+      "normalized_vietnamese": "",
+      "normalized_english": "greenviet green building consultancy"
+    },
+    {
+      "supplier_id": "1000141006",
+      "vietnamese_name": null,
+      "english_name": "Orthopedics And Rehabilitation Hospital",
+      "normalized_vietnamese": "",
+      "normalized_english": "orthopedics and rehabilitation hospital"
+    },
+    {
+      "supplier_id": "1000146978",
+      "vietnamese_name": null,
+      "english_name": "Generali Vietnam Life Insurance Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "generali vietnam life insurance limited"
+    },
+    {
+      "supplier_id": "1000062091",
+      "vietnamese_name": null,
+      "english_name": "IETS CO., LTD Equipment and Technical Service International Co., Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "iets company limited equipment and technical service international company limited"
+    },
+    {
+      "supplier_id": "1000689885",
+      "vietnamese_name": null,
+      "english_name": "TJ AEROSPACE VN LLC",
+      "normalized_vietnamese": "",
+      "normalized_english": "tj aerospace vn llc"
+    },
+    {
+      "supplier_id": "1000014613",
+      "vietnamese_name": null,
+      "english_name": "Visco Joint Stock Company",
+      "normalized_vietnamese": "",
+      "normalized_english": "visco joint stock company"
+    },
+    {
+      "supplier_id": "1000051108",
+      "vietnamese_name": null,
+      "english_name": "NAVIGOS GROUP VIETNAM JOINT STOCK COMPANY",
+      "normalized_vietnamese": "",
+      "normalized_english": "navigos group vietnam joint stock company"
+    },
+    {
+      "supplier_id": "1000084679",
+      "vietnamese_name": null,
+      "english_name": "LC Mechanical & Electrical Technology",
+      "normalized_vietnamese": "",
+      "normalized_english": "lc mechanical electrical technology"
+    },
+    {
+      "supplier_id": "1000147132",
+      "vietnamese_name": null,
+      "english_name": "Bao Viet Insurance Corporation",
+      "normalized_vietnamese": "",
+      "normalized_english": "bao viet insurance corporation"
+    },
+    {
+      "supplier_id": "1000562596",
+      "vietnamese_name": null,
+      "english_name": "SAFEPRO VIET NAM COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "safepro viet nam company limited"
+    },
+    {
+      "supplier_id": "1000137288",
+      "vietnamese_name": null,
+      "english_name": "Acdees Thermal Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "acdees thermal company limited"
+    },
+    {
+      "supplier_id": "1000429506",
+      "vietnamese_name": null,
+      "english_name": "LDT Joint stock company",
+      "normalized_vietnamese": "",
+      "normalized_english": "ldt joint stock company"
+    },
+    {
+      "supplier_id": "1000111154",
+      "vietnamese_name": null,
+      "english_name": "Namics Taiwan Co., Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "namics taiwan company limited"
+    },
+    {
+      "supplier_id": "1000015303",
+      "vietnamese_name": null,
+      "english_name": "Greatech Integration (M) Sdn Bhd",
+      "normalized_vietnamese": "",
+      "normalized_english": "greatech integration m sendirian berhad"
+    },
+    {
+      "supplier_id": "1000149930",
+      "vietnamese_name": null,
+      "english_name": "Human Dynamic (Vietnam) Company Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "human dynamic vietnam company limited"
+    },
+    {
+      "supplier_id": "1000028963",
+      "vietnamese_name": null,
+      "english_name": "TE CONNECTIVITY MALAYSIA SDN BHD",
+      "normalized_vietnamese": "",
+      "normalized_english": "te connectivity malaysia sendirian berhad"
+    },
+    {
+      "supplier_id": "1000017909",
+      "vietnamese_name": null,
+      "english_name": "Heller Industries, Inc",
+      "normalized_vietnamese": "",
+      "normalized_english": "heller industries incorporated"
+    },
+    {
+      "supplier_id": "1000067055",
+      "vietnamese_name": null,
+      "english_name": "Unimicron Technology Corp.",
+      "normalized_vietnamese": "",
+      "normalized_english": "unimicron technology corporation"
+    },
+    {
+      "supplier_id": "1000013965",
+      "vietnamese_name": null,
+      "english_name": "Senju Comtek Corp.",
+      "normalized_vietnamese": "",
+      "normalized_english": "senju comtek corporation"
+    },
+    {
+      "supplier_id": "1000093893",
+      "vietnamese_name": null,
+      "english_name": "Tmf Vietnam Company Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "tmf vietnam company limited"
+    },
+    {
+      "supplier_id": "1000052145",
+      "vietnamese_name": null,
+      "english_name": "Hochiminh City First Aid Center",
+      "normalized_vietnamese": "",
+      "normalized_english": "hochiminh city first aid center"
+    },
+    {
+      "supplier_id": "1000132816",
+      "vietnamese_name": null,
+      "english_name": "Entegris Asia Pte. Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "entegris asia private limited"
+    },
+    {
+      "supplier_id": "1000078142",
+      "vietnamese_name": null,
+      "english_name": "Ngoctankien Trading And Manufacturig",
+      "normalized_vietnamese": "",
+      "normalized_english": "ngoctankien trading and manufacturig"
+    },
+    {
+      "supplier_id": "1000133622",
+      "vietnamese_name": null,
+      "english_name": "Ba Long Trade And Service Limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "ba long trade and service limited"
+    },
+    {
+      "supplier_id": "1000001066",
+      "vietnamese_name": null,
+      "english_name": "WKK Distribution (Singapore) Pte Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "wkk distribution singapore private limited"
+    },
+    {
+      "supplier_id": "1000608995",
+      "vietnamese_name": null,
+      "english_name": "KPMG Limited Branch",
+      "normalized_vietnamese": "",
+      "normalized_english": "kpmg limited branch"
+    },
+    {
+      "supplier_id": "1000000618",
+      "vietnamese_name": null,
+      "english_name": "Advantek Products (S) Pte Ltd",
+      "normalized_vietnamese": "",
+      "normalized_english": "advantek products s private limited"
+    },
+    {
+      "supplier_id": "1000137090",
+      "vietnamese_name": null,
+      "english_name": "ASMPT Vietnam company limited",
+      "normalized_vietnamese": "",
+      "normalized_english": "asmpt vietnam company limited"
+    },
+    {
+      "supplier_id": "1000024372",
+      "vietnamese_name": null,
+      "english_name": "Escotec Engineering (M) Sdn. Bhd.",
+      "normalized_vietnamese": "",
+      "normalized_english": "escotec engineering m sendirian berhad"
+    },
+    {
+      "supplier_id": "1000147137",
+      "vietnamese_name": "CÔNG TY TNHH MÔI GIỚI BẢO HIỂM MARS",
+      "english_name": "MARS INSURANCE BROKERAGE LIMITED",
+      "normalized_vietnamese": "cong ty tnhh moi gioi bao hiem mars",
+      "normalized_english": "mars insurance brokerage limited"
+    },
+    {
+      "supplier_id": "1000008932",
+      "vietnamese_name": null,
+      "english_name": "SK hynix America Inc.",
+      "normalized_vietnamese": "",
+      "normalized_english": "sk hynix america incorporated"
+    },
+    {
+      "supplier_id": "1000691535",
+      "vietnamese_name": null,
+      "english_name": "VIEC LAM 24H JOINT STOCK COMPANY",
+      "normalized_vietnamese": "",
+      "normalized_english": "viec lam 24h joint stock company"
+    },
+    {
+      "supplier_id": "1000122592",
+      "vietnamese_name": null,
+      "english_name": "Flextronics International Ireland",
+      "normalized_vietnamese": "",
+      "normalized_english": "flextronics international ireland"
+    },
+    {
+      "supplier_id": "1000095029",
+      "vietnamese_name": null,
+      "english_name": "HAI HIEN COMPANY LIMITED",
+      "normalized_vietnamese": "",
+      "normalized_english": "hai hien company limited"
+    },
+    {
+      "supplier_id": "1000090188",
+      "vietnamese_name": null,
+      "english_name": "TECHMASTER ELECTRONICS JOINT STOCK COMPANY",
+      "normalized_vietnamese": "",
+      "normalized_english": "techmaster electronics joint stock company"
+    }
+  ],
+  "entries": [
+    {
+      "supplier_id": "1000142571",
+      "alias": "SAI GON FABRICATION COMPANY LIMITED",
+      "normalized": "sai gon fabrication company limited"
+    },
+    {
+      "supplier_id": "1000023220",
+      "alias": "Box-Pak (Vietnam) Co., Ltd.",
+      "normalized": "box pak vietnam company limited"
+    },
+    {
+      "supplier_id": "1000091037",
+      "alias": "SVN AUTOMATION CO., LTD",
+      "normalized": "svn automation company limited"
+    },
+    {
+      "supplier_id": "1000074183",
+      "alias": "Interworld Vietnam Import Export Tr",
+      "normalized": "interworld vietnam import export tr"
+    },
+    {
+      "supplier_id": "1000077171",
+      "alias": "Manpower Vietnam Company Limited",
+      "normalized": "manpower vietnam company limited"
+    },
+    {
+      "supplier_id": "1000052774",
+      "alias": "A Chi Son Joint Stock Company",
+      "normalized": "a chi son joint stock company"
+    },
+    {
+      "supplier_id": "1000070514",
+      "alias": "HUYNH DUC MANUFACTURING TRADING AND SERVICES LTD.",
+      "normalized": "huynh duc manufacturing trading and services limited"
+    },
+    {
+      "supplier_id": "1000115432",
+      "alias": "M AND S Industry Technology Service",
+      "normalized": "m and s industry technology service"
+    },
+    {
+      "supplier_id": "1000055698",
+      "alias": "Loriot Industrial Co.,Ltd.",
+      "normalized": "loriot industrial company limited"
+    },
+    {
+      "supplier_id": "1000059008",
+      "alias": "Chasen Transport Logistics Company",
+      "normalized": "chasen transport logistics company"
+    },
+    {
+      "supplier_id": "1000016044",
+      "alias": "Solstice Electronic Materials, Inc.",
+      "normalized": "solstice electronic materials incorporated"
+    },
+    {
+      "supplier_id": "1000051026",
+      "alias": "Schenker Vietnam Co., Ltd.",
+      "normalized": "schenker vietnam company limited"
+    },
+    {
+      "supplier_id": "1000060266",
+      "alias": "Uwc Precision Engineering Company Ltd",
+      "normalized": "uwc precision engineering company limited"
+    },
+    {
+      "supplier_id": "1000140125",
+      "alias": "GREEN SPEED JOINT STOCK COMPANY",
+      "normalized": "green speed joint stock company"
+    },
+    {
+      "supplier_id": "1000124528",
+      "alias": "Fuji Cac Joint Stock Company",
+      "normalized": "fuji cac joint stock company"
+    },
+    {
+      "supplier_id": "1000089444",
+      "alias": "SA PAI SERVICE TRADING PRODUCTION C",
+      "normalized": "sa pai service trading production c"
+    },
+    {
+      "supplier_id": "1000147773",
+      "alias": "Inventory Management Solutions Co.",
+      "normalized": "inventory management solutions company"
+    },
+    {
+      "supplier_id": "1000069121",
+      "alias": "CT TNHH TM VA DV THIEN NGHI",
+      "normalized": "ct tnhh tm va dv thien nghi"
+    },
+    {
+      "supplier_id": "1000069121",
+      "alias": "THIEN TRADING AND SERVICE CO., LTD",
+      "normalized": "thien trading and service company limited"
+    },
+    {
+      "supplier_id": "1000022429",
+      "alias": "Air Liquide Vietnam Co.,ltd Air Liquide Vietnam Co.,ltd, Bac Ninh City",
+      "normalized": "air liquide vietnam company limited air liquide vietnam company limited bac ninh city"
+    },
+    {
+      "supplier_id": "1000450613",
+      "alias": "FEYANA COMPANY LIMITED FEYANA COMPANY LIMITED",
+      "normalized": "feyana company limited feyana company limited"
+    },
+    {
+      "supplier_id": "1000067450",
+      "alias": "PHAM NGUYEN TRADING CO.,LTD",
+      "normalized": "pham nguyen trading company limited"
+    },
+    {
+      "supplier_id": "1000055376",
+      "alias": "Jones Lang Lasalle Vietnam Company",
+      "normalized": "jones lang lasalle vietnam company"
+    },
+    {
+      "supplier_id": "1000153667",
+      "alias": "OJITEX (VIETNAM) CO., LTD.",
+      "normalized": "ojitex vietnam company limited"
+    },
+    {
+      "supplier_id": "1000093501",
+      "alias": "Jebsen & Jessen Packaging VietNam Company",
+      "normalized": "jebsen jessen packaging vietnam company"
+    },
+    {
+      "supplier_id": "1000087542",
+      "alias": "Me Dinh Company Limited",
+      "normalized": "me dinh company limited"
+    },
+    {
+      "supplier_id": "1000087542",
+      "alias": "Công Ty Tnhh Mễ Đình (Vietnam)",
+      "normalized": "cong ty tnhh me dinh vietnam"
+    },
+    {
+      "supplier_id": "1000609334",
+      "alias": "BOUSTEAD PROJECTS (VIETNAM) CO.,LTD",
+      "normalized": "boustead projects vietnam company limited"
+    },
+    {
+      "supplier_id": "1000609384",
+      "alias": "CHI NHÁNH TỔNG CÔNG TY ĐIỆN LỰC THÀNH",
+      "normalized": "chi nhanh tong cong ty dien luc thanh"
+    },
+    {
+      "supplier_id": "1000609384",
+      "alias": "BRANCH OF THANH ELECTRICITY CORPORATION",
+      "normalized": "branch of thanh electricity corporation"
+    },
+    {
+      "supplier_id": "1000010820",
+      "alias": "VNPT THÀNH PHỐ HỒ CHÍ MINH",
+      "normalized": "vnpt thanh pho ho chi minh"
+    },
+    {
+      "supplier_id": "1000010820",
+      "alias": "VNPT Ho Chi Minh City",
+      "normalized": "vnpt ho chi minh city"
+    },
+    {
+      "supplier_id": "1000402505",
+      "alias": "WKK INDUSTRIES CO.,LTD",
+      "normalized": "wkk industries company limited"
+    },
+    {
+      "supplier_id": "1000007324",
+      "alias": "SHINKO ELECTRIC INDUSTRIES CO., LTD,",
+      "normalized": "shinko electric industries company limited"
+    },
+    {
+      "supplier_id": "1000124975",
+      "alias": "Saigon Hi-Tech Park Projects Manage",
+      "normalized": "saigon hi tech park projects manage"
+    },
+    {
+      "supplier_id": "1000472184",
+      "alias": "PTEC SOLUTIONS COMPANY LIMITED",
+      "normalized": "ptec solutions company limited"
+    },
+    {
+      "supplier_id": "1000472184",
+      "alias": "Công Ty TNHH PTEC Solutions",
+      "normalized": "cong ty tnhh ptec solutions"
+    },
+    {
+      "supplier_id": "1000015102",
+      "alias": "Dhl Global Forwarding (Vietnam) Corporation",
+      "normalized": "dhl global forwarding vietnam corporation"
+    },
+    {
+      "supplier_id": "1000083274",
+      "alias": "Saigon International General Hospital",
+      "normalized": "saigon international general hospital"
+    },
+    {
+      "supplier_id": "1000152234",
+      "alias": "LOC KHANH VY COMPANY LIMITED",
+      "normalized": "loc khanh vy company limited"
+    },
+    {
+      "supplier_id": "1000085296",
+      "alias": "Dat Chi Technology Company Limited",
+      "normalized": "dat chi technology company limited"
+    },
+    {
+      "supplier_id": "1000088528",
+      "alias": "INSEE Siam City Cement (Vietnam) Limited",
+      "normalized": "insee siam city cement vietnam limited"
+    },
+    {
+      "supplier_id": "1000073655",
+      "alias": "Turner & Townsend Company Limited",
+      "normalized": "turner townsend company limited"
+    },
+    {
+      "supplier_id": "1000025025",
+      "alias": "Hong Co Technology Company Limited",
+      "normalized": "hong company technology company limited"
+    },
+    {
+      "supplier_id": "1000066805",
+      "alias": "Jentech Precision Industrial Co., LTD",
+      "normalized": "jentech precision industrial company limited"
+    },
+    {
+      "supplier_id": "1000023836",
+      "alias": "Victoria Healthcare Medical Develop",
+      "normalized": "victoria healthcare medical develop"
+    },
+    {
+      "supplier_id": "1000080182",
+      "alias": "Lidin Co., Ltd Life Development Investment Company",
+      "normalized": "lidin company limited life development investment company"
+    },
+    {
+      "supplier_id": "1000144042",
+      "alias": "Cbre (Vietnam) Company Limited",
+      "normalized": "cbre vietnam company limited"
+    },
+    {
+      "supplier_id": "1000126884",
+      "alias": "Seven System Viet Nam Joint Stock Company",
+      "normalized": "seven system viet nam joint stock company"
+    },
+    {
+      "supplier_id": "1000086386",
+      "alias": "QUALITY ASSURANCE MANAGEMENT VIETNAM",
+      "normalized": "quality assurance management vietnam"
+    },
+    {
+      "supplier_id": "1000147437",
+      "alias": "SEALED AIR VIETNAM COMPANY LIMITED",
+      "normalized": "sealed air vietnam company limited"
+    },
+    {
+      "supplier_id": "1000142573",
+      "alias": "PTEC SOLUTIONS SYSTEM CO.,LTD",
+      "normalized": "ptec solutions system company limited"
+    },
+    {
+      "supplier_id": "1000013312",
+      "alias": "Senju Metal Industry Co., Ltd",
+      "normalized": "senju metal industry company limited"
+    },
+    {
+      "supplier_id": "1000147771",
+      "alias": "CONG TY CO PHAN KIEM DINH HUAN LUYE",
+      "normalized": "cong ty company phan kiem dinh huan luye"
+    },
+    {
+      "supplier_id": "1000110201",
+      "alias": "Zone 2 Technical Safety Training Joint Stock Company",
+      "normalized": "zone 2 technical safety training joint stock company"
+    },
+    {
+      "supplier_id": "1000094818",
+      "alias": "Dong Tien Viet Manufacturing Trading Co. Ltd",
+      "normalized": "dong tien viet manufacturing trading company limited"
+    },
+    {
+      "supplier_id": "1000094753",
+      "alias": "Hung phu vinh co.ltd",
+      "normalized": "hung phu vinh company limited"
+    },
+    {
+      "supplier_id": "1000012214",
+      "alias": "Lac Viet Computing Corporation",
+      "normalized": "lac viet computing corporation"
+    },
+    {
+      "supplier_id": "1000075052",
+      "alias": "Micro Precision Calibration Vietnam",
+      "normalized": "micro precision calibration vietnam"
+    },
+    {
+      "supplier_id": "1000105502",
+      "alias": "HP TECHNOLOGY VIETNAM COMPANY LTD",
+      "normalized": "hp technology vietnam company limited"
+    },
+    {
+      "supplier_id": "1000150890",
+      "alias": "SCB Construction Joint Stock Company",
+      "normalized": "scb construction joint stock company"
+    },
+    {
+      "supplier_id": "1000140944",
+      "alias": "Hp Technology Vietnam Company Ltd",
+      "normalized": "hp technology vietnam company limited"
+    },
+    {
+      "supplier_id": "1000017793",
+      "alias": "Kpmg Tax And Advisory Limited Branch",
+      "normalized": "kpmg tax and advisory limited branch"
+    },
+    {
+      "supplier_id": "1000059140",
+      "alias": "Quy Dau Tu Mao Hiem Cnc9",
+      "normalized": "quy dau tu mao hiem cnc9"
+    },
+    {
+      "supplier_id": "1000079456",
+      "alias": "RAPI OFFICE SUPPLIES CO., LTD",
+      "normalized": "rapi office supplies company limited"
+    },
+    {
+      "supplier_id": "1000402511",
+      "alias": "ASIA STORAGE TECHNOLOGY CO., LTD",
+      "normalized": "asia storage technology company limited"
+    },
+    {
+      "supplier_id": "1000150087",
+      "alias": "NEFAB SOUTH VIETNAM CO., LTD",
+      "normalized": "nefab south vietnam company limited"
+    },
+    {
+      "supplier_id": "1000141956",
+      "alias": "Da Bao Commercial Service Limited",
+      "normalized": "da bao commercial service limited"
+    },
+    {
+      "supplier_id": "1000487547",
+      "alias": "BRANCH OF OMRON VIETNAM COMPANY LTD",
+      "normalized": "branch of omron vietnam company limited"
+    },
+    {
+      "supplier_id": "1000691825",
+      "alias": "D&T Technical Development Trading",
+      "normalized": "d t technical development trading"
+    },
+    {
+      "supplier_id": "1000098649",
+      "alias": "The British International School",
+      "normalized": "the british international school"
+    },
+    {
+      "supplier_id": "1000145101",
+      "alias": "3M VIETNAM LIMITED",
+      "normalized": "3m vietnam limited"
+    },
+    {
+      "supplier_id": "1000105565",
+      "alias": "Epe Packaging (Vietnam) Company Limited",
+      "normalized": "epe packaging vietnam company limited"
+    },
+    {
+      "supplier_id": "1000077884",
+      "alias": "Hoang Sa Viet Investment and Development Company",
+      "normalized": "hoang sa viet investment and development company"
+    },
+    {
+      "supplier_id": "1000052853",
+      "alias": "RED STAR VIETNAM COMPANY LIMITED",
+      "normalized": "red star vietnam company limited"
+    },
+    {
+      "supplier_id": "1000058320",
+      "alias": "FPT IS COMPANY LIMITED",
+      "normalized": "fpt is company limited"
+    },
+    {
+      "supplier_id": "1000002567",
+      "alias": "SAMSUNG SEMICONDUCTOR, INC.",
+      "normalized": "samsung semiconductor incorporated"
+    },
+    {
+      "supplier_id": "1000689583",
+      "alias": "Expertrans Global Joint Stock Company",
+      "normalized": "expertrans global joint stock company"
+    },
+    {
+      "supplier_id": "1000145102",
+      "alias": "SMC CORPORATION (VIETNAM) COMPANY LIMITED",
+      "normalized": "smc corporation vietnam company limited"
+    },
+    {
+      "supplier_id": "1000081356",
+      "alias": "Bệnh Viện Quân Dân Y Miền Đông",
+      "normalized": "benh vien quan dan y mien dong"
+    },
+    {
+      "supplier_id": "1000081356",
+      "alias": "Eastern Military and Civilian Hospital",
+      "normalized": "eastern military and civilian hospital"
+    },
+    {
+      "supplier_id": "1000690978",
+      "alias": "Chi nhánh Tổng công ty Du lịch Sài Gòn",
+      "normalized": "chi nhanh tong cong ty du lich sai gon"
+    },
+    {
+      "supplier_id": "1000690978",
+      "alias": "Branch of Saigon Tourism Corporation",
+      "normalized": "branch of saigon tourism corporation"
+    },
+    {
+      "supplier_id": "1000013920",
+      "alias": "LONG HAI SECURITY SERVICES JOINT STOCK COMPANY",
+      "normalized": "long hai security services joint stock company"
+    },
+    {
+      "supplier_id": "1000487691",
+      "alias": "Vietnam Law Communication Joint Stock Company",
+      "normalized": "vietnam law communication joint stock company"
+    },
+    {
+      "supplier_id": "1000150239",
+      "alias": "TL TECHNOLOGIES AND SERVICE VIETNAM",
+      "normalized": "tl technologies and service vietnam"
+    },
+    {
+      "supplier_id": "1000006931",
+      "alias": "Micron Semiconductor Asia Operation",
+      "normalized": "micron semiconductor asia operation"
+    },
+    {
+      "supplier_id": "1000132055",
+      "alias": "Dayone Joint Stock Company",
+      "normalized": "dayone joint stock company"
+    },
+    {
+      "supplier_id": "1000050793",
+      "alias": "HOA DAO SUPPLY INDUSTRIAL SERVING",
+      "normalized": "hoa dao supply industrial serving"
+    },
+    {
+      "supplier_id": "1000139301",
+      "alias": "Keyence Vietnam Co.,Ltd",
+      "normalized": "keyence vietnam company limited"
+    },
+    {
+      "supplier_id": "1000011910",
+      "alias": "Aem Singapore Pte Ltd",
+      "normalized": "aem singapore private limited"
+    },
+    {
+      "supplier_id": "1000077072",
+      "alias": "Baker & Mckenzie (Vietnam) Ltd",
+      "normalized": "baker mckenzie vietnam limited"
+    },
+    {
+      "supplier_id": "1000027563",
+      "alias": "Russin and Vecchi",
+      "normalized": "russin and vecchi"
+    },
+    {
+      "supplier_id": "1000126353",
+      "alias": "Mettler-Toledo Viet Nam Limited Liability Company",
+      "normalized": "mettler toledo viet nam limited liability company"
+    },
+    {
+      "supplier_id": "1000017763",
+      "alias": "MT Scientific Equipment Co., Ltd",
+      "normalized": "mt scientific equipment company limited"
+    },
+    {
+      "supplier_id": "1000016143",
+      "alias": "Yokowo (Singapore) Pte Ltd",
+      "normalized": "yokowo singapore private limited"
+    },
+    {
+      "supplier_id": "1000430389",
+      "alias": "BrandPC Viet Nam Company Limited",
+      "normalized": "brandpc viet nam company limited"
+    },
+    {
+      "supplier_id": "1000428629",
+      "alias": "PHONG VU TRADING - SERVICE CORPORATION",
+      "normalized": "phong vu trading service corporation"
+    },
+    {
+      "supplier_id": "1000012069",
+      "alias": "The Indium Corporation of America",
+      "normalized": "the indium corporation of america"
+    },
+    {
+      "supplier_id": "1000022540",
+      "alias": "The American Chamber of Commerce in Vietnam (AmCham Vietnam)",
+      "normalized": "the american chamber of commerce in vietnam amcham vietnam"
+    },
+    {
+      "supplier_id": "1000145191",
+      "alias": "EOS IT MANAGEMENT SOLUTIONS COMPANY",
+      "normalized": "eos it management solutions company"
+    },
+    {
+      "supplier_id": "1000116499",
+      "alias": "New Ocean Automation System Company",
+      "normalized": "new ocean automation system company"
+    },
+    {
+      "supplier_id": "1000152406",
+      "alias": "SOLUM VINA COMPANY",
+      "normalized": "solum vina company"
+    },
+    {
+      "supplier_id": "1000091586",
+      "alias": "Thai Son Technology Development Co.",
+      "normalized": "thai son technology development company"
+    },
+    {
+      "supplier_id": "1000001961",
+      "alias": "FEI COMPANY OF USA (S.E.A.) PTE LTD",
+      "normalized": "fei company of usa s e a private limited"
+    },
+    {
+      "supplier_id": "1000072827",
+      "alias": "Modus Test LLC, Richardson",
+      "normalized": "modus test llc richardson"
+    },
+    {
+      "supplier_id": "1000013768",
+      "alias": "Essai, Inc., Chandler",
+      "normalized": "essai incorporated chandler"
+    },
+    {
+      "supplier_id": "1000128652",
+      "alias": "Ecolab Vietnam Company Limited",
+      "normalized": "ecolab vietnam company limited"
+    },
+    {
+      "supplier_id": "1000015836",
+      "alias": "Ernst & Young Viet Nam Limited",
+      "normalized": "ernst young viet nam limited"
+    },
+    {
+      "supplier_id": "1000131124",
+      "alias": "GREENVIET GREEN BUILDING CONSULTANCY",
+      "normalized": "greenviet green building consultancy"
+    },
+    {
+      "supplier_id": "1000141006",
+      "alias": "Orthopedics And Rehabilitation Hospital",
+      "normalized": "orthopedics and rehabilitation hospital"
+    },
+    {
+      "supplier_id": "1000146978",
+      "alias": "Generali Vietnam Life Insurance Limited",
+      "normalized": "generali vietnam life insurance limited"
+    },
+    {
+      "supplier_id": "1000062091",
+      "alias": "IETS CO., LTD Equipment and Technical Service International Co., Ltd",
+      "normalized": "iets company limited equipment and technical service international company limited"
+    },
+    {
+      "supplier_id": "1000689885",
+      "alias": "TJ AEROSPACE VN LLC",
+      "normalized": "tj aerospace vn llc"
+    },
+    {
+      "supplier_id": "1000014613",
+      "alias": "Visco Joint Stock Company",
+      "normalized": "visco joint stock company"
+    },
+    {
+      "supplier_id": "1000051108",
+      "alias": "NAVIGOS GROUP VIETNAM JOINT STOCK COMPANY",
+      "normalized": "navigos group vietnam joint stock company"
+    },
+    {
+      "supplier_id": "1000084679",
+      "alias": "LC Mechanical & Electrical Technology",
+      "normalized": "lc mechanical electrical technology"
+    },
+    {
+      "supplier_id": "1000147132",
+      "alias": "Bao Viet Insurance Corporation",
+      "normalized": "bao viet insurance corporation"
+    },
+    {
+      "supplier_id": "1000562596",
+      "alias": "SAFEPRO VIET NAM COMPANY LIMITED",
+      "normalized": "safepro viet nam company limited"
+    },
+    {
+      "supplier_id": "1000137288",
+      "alias": "Acdees Thermal Company Limited",
+      "normalized": "acdees thermal company limited"
+    },
+    {
+      "supplier_id": "1000429506",
+      "alias": "LDT Joint stock company",
+      "normalized": "ldt joint stock company"
+    },
+    {
+      "supplier_id": "1000111154",
+      "alias": "Namics Taiwan Co., Ltd",
+      "normalized": "namics taiwan company limited"
+    },
+    {
+      "supplier_id": "1000015303",
+      "alias": "Greatech Integration (M) Sdn Bhd",
+      "normalized": "greatech integration m sendirian berhad"
+    },
+    {
+      "supplier_id": "1000149930",
+      "alias": "Human Dynamic (Vietnam) Company Ltd",
+      "normalized": "human dynamic vietnam company limited"
+    },
+    {
+      "supplier_id": "1000028963",
+      "alias": "TE CONNECTIVITY MALAYSIA SDN BHD",
+      "normalized": "te connectivity malaysia sendirian berhad"
+    },
+    {
+      "supplier_id": "1000017909",
+      "alias": "Heller Industries, Inc",
+      "normalized": "heller industries incorporated"
+    },
+    {
+      "supplier_id": "1000067055",
+      "alias": "Unimicron Technology Corp.",
+      "normalized": "unimicron technology corporation"
+    },
+    {
+      "supplier_id": "1000013965",
+      "alias": "Senju Comtek Corp.",
+      "normalized": "senju comtek corporation"
+    },
+    {
+      "supplier_id": "1000093893",
+      "alias": "Tmf Vietnam Company Limited",
+      "normalized": "tmf vietnam company limited"
+    },
+    {
+      "supplier_id": "1000052145",
+      "alias": "Hochiminh City First Aid Center",
+      "normalized": "hochiminh city first aid center"
+    },
+    {
+      "supplier_id": "1000132816",
+      "alias": "Entegris Asia Pte. Ltd",
+      "normalized": "entegris asia private limited"
+    },
+    {
+      "supplier_id": "1000078142",
+      "alias": "Ngoctankien Trading And Manufacturig",
+      "normalized": "ngoctankien trading and manufacturig"
+    },
+    {
+      "supplier_id": "1000133622",
+      "alias": "Ba Long Trade And Service Limited",
+      "normalized": "ba long trade and service limited"
+    },
+    {
+      "supplier_id": "1000001066",
+      "alias": "WKK Distribution (Singapore) Pte Ltd",
+      "normalized": "wkk distribution singapore private limited"
+    },
+    {
+      "supplier_id": "1000608995",
+      "alias": "KPMG Limited Branch",
+      "normalized": "kpmg limited branch"
+    },
+    {
+      "supplier_id": "1000000618",
+      "alias": "Advantek Products (S) Pte Ltd",
+      "normalized": "advantek products s private limited"
+    },
+    {
+      "supplier_id": "1000137090",
+      "alias": "ASMPT Vietnam company limited",
+      "normalized": "asmpt vietnam company limited"
+    },
+    {
+      "supplier_id": "1000024372",
+      "alias": "Escotec Engineering (M) Sdn. Bhd.",
+      "normalized": "escotec engineering m sendirian berhad"
+    },
+    {
+      "supplier_id": "1000147137",
+      "alias": "CÔNG TY TNHH MÔI GIỚI BẢO HIỂM MARS",
+      "normalized": "cong ty tnhh moi gioi bao hiem mars"
+    },
+    {
+      "supplier_id": "1000147137",
+      "alias": "MARS INSURANCE BROKERAGE LIMITED",
+      "normalized": "mars insurance brokerage limited"
+    },
+    {
+      "supplier_id": "1000008932",
+      "alias": "SK hynix America Inc.",
+      "normalized": "sk hynix america incorporated"
+    },
+    {
+      "supplier_id": "1000691535",
+      "alias": "VIEC LAM 24H JOINT STOCK COMPANY",
+      "normalized": "viec lam 24h joint stock company"
+    },
+    {
+      "supplier_id": "1000122592",
+      "alias": "Flextronics International Ireland",
+      "normalized": "flextronics international ireland"
+    },
+    {
+      "supplier_id": "1000095029",
+      "alias": "HAI HIEN COMPANY LIMITED",
+      "normalized": "hai hien company limited"
+    },
+    {
+      "supplier_id": "1000090188",
+      "alias": "TECHMASTER ELECTRONICS JOINT STOCK COMPANY",
+      "normalized": "techmaster electronics joint stock company"
+    }
+  ],
+  "norm_to_indices": {
+    "sai gon fabrication company limited": [
+      0
+    ],
+    "box pak vietnam company limited": [
+      1
+    ],
+    "svn automation company limited": [
+      2
+    ],
+    "interworld vietnam import export tr": [
+      3
+    ],
+    "manpower vietnam company limited": [
+      4
+    ],
+    "a chi son joint stock company": [
+      5
+    ],
+    "huynh duc manufacturing trading and services limited": [
+      6
+    ],
+    "m and s industry technology service": [
+      7
+    ],
+    "loriot industrial company limited": [
+      8
+    ],
+    "chasen transport logistics company": [
+      9
+    ],
+    "solstice electronic materials incorporated": [
+      10
+    ],
+    "schenker vietnam company limited": [
+      11
+    ],
+    "uwc precision engineering company limited": [
+      12
+    ],
+    "green speed joint stock company": [
+      13
+    ],
+    "fuji cac joint stock company": [
+      14
+    ],
+    "sa pai service trading production c": [
+      15
+    ],
+    "inventory management solutions company": [
+      16
+    ],
+    "ct tnhh tm va dv thien nghi": [
+      17
+    ],
+    "thien trading and service company limited": [
+      18
+    ],
+    "air liquide vietnam company limited air liquide vietnam company limited bac ninh city": [
+      19
+    ],
+    "feyana company limited feyana company limited": [
+      20
+    ],
+    "pham nguyen trading company limited": [
+      21
+    ],
+    "jones lang lasalle vietnam company": [
+      22
+    ],
+    "ojitex vietnam company limited": [
+      23
+    ],
+    "jebsen jessen packaging vietnam company": [
+      24
+    ],
+    "me dinh company limited": [
+      25
+    ],
+    "cong ty tnhh me dinh vietnam": [
+      26
+    ],
+    "boustead projects vietnam company limited": [
+      27
+    ],
+    "chi nhanh tong cong ty dien luc thanh": [
+      28
+    ],
+    "branch of thanh electricity corporation": [
+      29
+    ],
+    "vnpt thanh pho ho chi minh": [
+      30
+    ],
+    "vnpt ho chi minh city": [
+      31
+    ],
+    "wkk industries company limited": [
+      32
+    ],
+    "shinko electric industries company limited": [
+      33
+    ],
+    "saigon hi tech park projects manage": [
+      34
+    ],
+    "ptec solutions company limited": [
+      35
+    ],
+    "cong ty tnhh ptec solutions": [
+      36
+    ],
+    "dhl global forwarding vietnam corporation": [
+      37
+    ],
+    "saigon international general hospital": [
+      38
+    ],
+    "loc khanh vy company limited": [
+      39
+    ],
+    "dat chi technology company limited": [
+      40
+    ],
+    "insee siam city cement vietnam limited": [
+      41
+    ],
+    "turner townsend company limited": [
+      42
+    ],
+    "hong company technology company limited": [
+      43
+    ],
+    "jentech precision industrial company limited": [
+      44
+    ],
+    "victoria healthcare medical develop": [
+      45
+    ],
+    "lidin company limited life development investment company": [
+      46
+    ],
+    "cbre vietnam company limited": [
+      47
+    ],
+    "seven system viet nam joint stock company": [
+      48
+    ],
+    "quality assurance management vietnam": [
+      49
+    ],
+    "sealed air vietnam company limited": [
+      50
+    ],
+    "ptec solutions system company limited": [
+      51
+    ],
+    "senju metal industry company limited": [
+      52
+    ],
+    "cong ty company phan kiem dinh huan luye": [
+      53
+    ],
+    "zone 2 technical safety training joint stock company": [
+      54
+    ],
+    "dong tien viet manufacturing trading company limited": [
+      55
+    ],
+    "hung phu vinh company limited": [
+      56
+    ],
+    "lac viet computing corporation": [
+      57
+    ],
+    "micro precision calibration vietnam": [
+      58
+    ],
+    "hp technology vietnam company limited": [
+      59,
+      61
+    ],
+    "scb construction joint stock company": [
+      60
+    ],
+    "kpmg tax and advisory limited branch": [
+      62
+    ],
+    "quy dau tu mao hiem cnc9": [
+      63
+    ],
+    "rapi office supplies company limited": [
+      64
+    ],
+    "asia storage technology company limited": [
+      65
+    ],
+    "nefab south vietnam company limited": [
+      66
+    ],
+    "da bao commercial service limited": [
+      67
+    ],
+    "branch of omron vietnam company limited": [
+      68
+    ],
+    "d t technical development trading": [
+      69
+    ],
+    "the british international school": [
+      70
+    ],
+    "3m vietnam limited": [
+      71
+    ],
+    "epe packaging vietnam company limited": [
+      72
+    ],
+    "hoang sa viet investment and development company": [
+      73
+    ],
+    "red star vietnam company limited": [
+      74
+    ],
+    "fpt is company limited": [
+      75
+    ],
+    "samsung semiconductor incorporated": [
+      76
+    ],
+    "expertrans global joint stock company": [
+      77
+    ],
+    "smc corporation vietnam company limited": [
+      78
+    ],
+    "benh vien quan dan y mien dong": [
+      79
+    ],
+    "eastern military and civilian hospital": [
+      80
+    ],
+    "chi nhanh tong cong ty du lich sai gon": [
+      81
+    ],
+    "branch of saigon tourism corporation": [
+      82
+    ],
+    "long hai security services joint stock company": [
+      83
+    ],
+    "vietnam law communication joint stock company": [
+      84
+    ],
+    "tl technologies and service vietnam": [
+      85
+    ],
+    "micron semiconductor asia operation": [
+      86
+    ],
+    "dayone joint stock company": [
+      87
+    ],
+    "hoa dao supply industrial serving": [
+      88
+    ],
+    "keyence vietnam company limited": [
+      89
+    ],
+    "aem singapore private limited": [
+      90
+    ],
+    "baker mckenzie vietnam limited": [
+      91
+    ],
+    "russin and vecchi": [
+      92
+    ],
+    "mettler toledo viet nam limited liability company": [
+      93
+    ],
+    "mt scientific equipment company limited": [
+      94
+    ],
+    "yokowo singapore private limited": [
+      95
+    ],
+    "brandpc viet nam company limited": [
+      96
+    ],
+    "phong vu trading service corporation": [
+      97
+    ],
+    "the indium corporation of america": [
+      98
+    ],
+    "the american chamber of commerce in vietnam amcham vietnam": [
+      99
+    ],
+    "eos it management solutions company": [
+      100
+    ],
+    "new ocean automation system company": [
+      101
+    ],
+    "solum vina company": [
+      102
+    ],
+    "thai son technology development company": [
+      103
+    ],
+    "fei company of usa s e a private limited": [
+      104
+    ],
+    "modus test llc richardson": [
+      105
+    ],
+    "essai incorporated chandler": [
+      106
+    ],
+    "ecolab vietnam company limited": [
+      107
+    ],
+    "ernst young viet nam limited": [
+      108
+    ],
+    "greenviet green building consultancy": [
+      109
+    ],
+    "orthopedics and rehabilitation hospital": [
+      110
+    ],
+    "generali vietnam life insurance limited": [
+      111
+    ],
+    "iets company limited equipment and technical service international company limited": [
+      112
+    ],
+    "tj aerospace vn llc": [
+      113
+    ],
+    "visco joint stock company": [
+      114
+    ],
+    "navigos group vietnam joint stock company": [
+      115
+    ],
+    "lc mechanical electrical technology": [
+      116
+    ],
+    "bao viet insurance corporation": [
+      117
+    ],
+    "safepro viet nam company limited": [
+      118
+    ],
+    "acdees thermal company limited": [
+      119
+    ],
+    "ldt joint stock company": [
+      120
+    ],
+    "namics taiwan company limited": [
+      121
+    ],
+    "greatech integration m sendirian berhad": [
+      122
+    ],
+    "human dynamic vietnam company limited": [
+      123
+    ],
+    "te connectivity malaysia sendirian berhad": [
+      124
+    ],
+    "heller industries incorporated": [
+      125
+    ],
+    "unimicron technology corporation": [
+      126
+    ],
+    "senju comtek corporation": [
+      127
+    ],
+    "tmf vietnam company limited": [
+      128
+    ],
+    "hochiminh city first aid center": [
+      129
+    ],
+    "entegris asia private limited": [
+      130
+    ],
+    "ngoctankien trading and manufacturig": [
+      131
+    ],
+    "ba long trade and service limited": [
+      132
+    ],
+    "wkk distribution singapore private limited": [
+      133
+    ],
+    "kpmg limited branch": [
+      134
+    ],
+    "advantek products s private limited": [
+      135
+    ],
+    "asmpt vietnam company limited": [
+      136
+    ],
+    "escotec engineering m sendirian berhad": [
+      137
+    ],
+    "cong ty tnhh moi gioi bao hiem mars": [
+      138
+    ],
+    "mars insurance brokerage limited": [
+      139
+    ],
+    "sk hynix america incorporated": [
+      140
+    ],
+    "viec lam 24h joint stock company": [
+      141
+    ],
+    "flextronics international ireland": [
+      142
+    ],
+    "hai hien company limited": [
+      143
+    ],
+    "techmaster electronics joint stock company": [
+      144
+    ]
+  }
+}

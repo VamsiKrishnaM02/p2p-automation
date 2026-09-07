@@ -1,0 +1,1294 @@
+{
+  "source_file": "C:\\Users\\vmodalax\\OneDrive - Intel Corporation\\Desktop\\GenAI-OCR-P2P-Protyping\\Supporting Documents\\Legal Entity Lists.xlsx",
+  "threshold": 85,
+  "count_entries": 129,
+  "skipped_blank": 0,
+  "skipped_junk": 0,
+  "collisions": 1,
+  "entries": [
+    {
+      "normalized": "intel services division llc",
+      "original": "Intel Svcs Division LLC",
+      "le": "LE036",
+      "source_site": "Oregon",
+      "country": ""
+    },
+    {
+      "normalized": "intel corporation",
+      "original": "Intel Corporation",
+      "le": "LE100",
+      "source_site": "Oregon",
+      "country": ""
+    },
+    {
+      "normalized": "intel corporation accounts payable",
+      "original": "INTEL CORP ACCOUNTS PAYABLE",
+      "le": "LE100",
+      "source_site": "Oregon",
+      "country": ""
+    },
+    {
+      "normalized": "intel americas inc",
+      "original": "Intel Americas, Inc",
+      "le": "LE150",
+      "source_site": "Oregon",
+      "country": ""
+    },
+    {
+      "normalized": "intel federal llc",
+      "original": "Intel Federal LLC",
+      "le": "LE199",
+      "source_site": "Oregon",
+      "country": ""
+    },
+    {
+      "normalized": "intel technology of canada",
+      "original": "Intel Tech of Canada",
+      "le": "LE200",
+      "source_site": "Oregon",
+      "country": ""
+    },
+    {
+      "normalized": "intel corporation sa",
+      "original": "Intel Corporation SA",
+      "le": "LE300",
+      "source_site": "Swindon",
+      "country": "Belgium"
+    },
+    {
+      "normalized": "intel corporation nv",
+      "original": "Intel Corporation NV",
+      "le": "LE300",
+      "source_site": "Swindon",
+      "country": "Belgium"
+    },
+    {
+      "normalized": "intel denmark aps",
+      "original": "Intel Denmark Aps",
+      "le": "LE302",
+      "source_site": "Swindon",
+      "country": "Denmark"
+    },
+    {
+      "normalized": "intel mobile communications denmark aps",
+      "original": "Intel Mobile Communications Denmark Aps",
+      "le": "LE306",
+      "source_site": "Germany",
+      "country": "Denmark"
+    },
+    {
+      "normalized": "intel semiconductor ag",
+      "original": "Intel Semiconductor AG",
+      "le": "LE310",
+      "source_site": "Swindon",
+      "country": "Switzerland"
+    },
+    {
+      "normalized": "intel corporation iberia sa",
+      "original": "Intel Corporation Iberia S.A.",
+      "le": "LE320",
+      "source_site": "Swindon",
+      "country": "Spain"
+    },
+    {
+      "normalized": "intel corporation iberia sl",
+      "original": "Intel Corporation Iberia S.L.",
+      "le": "LE320",
+      "source_site": "Swindon",
+      "country": "Spain"
+    },
+    {
+      "normalized": "intel corporation uk limited algeria liaison office",
+      "original": "Intel Corporation (UK) Ltd. (Algeria Liaison Office)",
+      "le": "LE329",
+      "source_site": "Swindon",
+      "country": "Algeria"
+    },
+    {
+      "normalized": "intel corporation uk algeria rep office",
+      "original": "Intel Corporation (UK) - Algeria Rep Office",
+      "le": "LE329",
+      "source_site": "Swindon",
+      "country": "Algeria"
+    },
+    {
+      "normalized": "intel corporation uk algeria regus",
+      "original": "Intel Corporation (UK) Algeria Regus",
+      "le": "LE329",
+      "source_site": "Swindon",
+      "country": "Algeria"
+    },
+    {
+      "normalized": "intel corporation sas",
+      "original": "Intel Corporation SAS",
+      "le": "LE330",
+      "source_site": "Swindon",
+      "country": "France"
+    },
+    {
+      "normalized": "societe intel corporation sas toulouse",
+      "original": "STE Intel Corporation SAS Toulouse",
+      "le": "LE330",
+      "source_site": "Swindon",
+      "country": "France"
+    },
+    {
+      "normalized": "societe intel corporation sas nice",
+      "original": "STE Intel Corporation SAS NICE",
+      "le": "LE330",
+      "source_site": "Swindon",
+      "country": "France"
+    },
+    {
+      "normalized": "sas intel corporation",
+      "original": "SAS Intel Corporation",
+      "le": "LE330",
+      "source_site": "Swindon",
+      "country": "France"
+    },
+    {
+      "normalized": "intel mobile communications france sas",
+      "original": "Intel Mobile Communications France SAS",
+      "le": "LE337",
+      "source_site": "Germany",
+      "country": "France"
+    },
+    {
+      "normalized": "imc france sas",
+      "original": "IMC France SAS",
+      "le": "LE337",
+      "source_site": "Germany",
+      "country": "France"
+    },
+    {
+      "normalized": "intel gmbh",
+      "original": "Intel GmbH",
+      "le": "LE340",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "lantiq beteiligungs gmbh and co kg",
+      "original": "Lantiq Beteiligungs-GmbH & Co. KG",
+      "le": "LE342",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "lantiq deutschland gmbh",
+      "original": "Lantiq Deutschland GmbH",
+      "le": "LE342",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "intel finland oy",
+      "original": "Intel Finland OY",
+      "le": "LE350",
+      "source_site": "Swindon",
+      "country": "Finland"
+    },
+    {
+      "normalized": "intel copenhagen aps",
+      "original": "Intel Copenhagen Aps",
+      "le": "LE355",
+      "source_site": "Swindon",
+      "country": "Denmark"
+    },
+    {
+      "normalized": "intel germany service gmbh",
+      "original": "Intel Germany Service GmbH",
+      "le": "LE346",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "intel germany gmbh and co kg",
+      "original": "Intel Germany GmbH & Co. KG",
+      "le": "LE346",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "intel mobile communications gmbh",
+      "original": "Intel Mobile Communications GmbH",
+      "le": "LE356",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "intel deutschland gmbh",
+      "original": "Intel Deutschland GmbH",
+      "le": "LE356",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "intel mobile gmbh",
+      "original": "Intel Mobile GmbH",
+      "le": "LE359",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "intel magdeburg gmbh",
+      "original": "Intel Magdeburg GmbH",
+      "le": "LE365",
+      "source_site": "Germany",
+      "country": "Germany"
+    },
+    {
+      "normalized": "intel corporation italia spa",
+      "original": "Intel Corporation Italia S.P.A",
+      "le": "LE360",
+      "source_site": "Swindon",
+      "country": "Italy"
+    },
+    {
+      "normalized": "lantiq latvia sia",
+      "original": "Lantiq Latvia SIA",
+      "le": "LE369",
+      "source_site": "Germany",
+      "country": "Latvia"
+    },
+    {
+      "normalized": "turbe distribucao e marketing de produtos electronicos turbe lda",
+      "original": "Turbe - Distribucao e Marketing de Produtos Electronicos Turbe, LDA",
+      "le": "LE370",
+      "source_site": "Swindon",
+      "country": "Portugal"
+    },
+    {
+      "normalized": "turbe distribuicao e marketing de products electronics lda",
+      "original": "Turbe Distribuicao e Mark. De Prod, Elect LDA",
+      "le": "LE370",
+      "source_site": "Swindon",
+      "country": "Portugal"
+    },
+    {
+      "normalized": "intel finance bv",
+      "original": "Intel Finance B.V",
+      "le": "LE398",
+      "source_site": "Swindon",
+      "country": ""
+    },
+    {
+      "normalized": "intel benelux bv",
+      "original": "Intel Benelux B.V.",
+      "le": "LE390",
+      "source_site": "Swindon",
+      "country": "Netherlands"
+    },
+    {
+      "normalized": "intel sweden aktiebolag",
+      "original": "Intel Sweden AB",
+      "le": "LE400",
+      "source_site": "Swindon",
+      "country": "Sweden"
+    },
+    {
+      "normalized": "intel sweden aktiebolag",
+      "original": "Intel Sweden Aktiebolag",
+      "le": "LE400",
+      "source_site": "Swindon",
+      "country": "Sweden"
+    },
+    {
+      "normalized": "mcafee norway as",
+      "original": "McAfee Norway AS",
+      "le": "LE404",
+      "source_site": "Swindon",
+      "country": "Norway"
+    },
+    {
+      "normalized": "intel research and development uk limited",
+      "original": "Intel RnD UK Limited",
+      "le": "LE417",
+      "source_site": "Swindon",
+      "country": "London"
+    },
+    {
+      "normalized": "intel corporation uk limited",
+      "original": "Intel Corporation UK Ltd",
+      "le": "LE420",
+      "source_site": "Swindon",
+      "country": "England and Wales"
+    },
+    {
+      "normalized": "intel corporation uk limited dubai branch",
+      "original": "Intel Corporation UK Ltd - Dubai Branch",
+      "le": "LE421",
+      "source_site": "Swindon",
+      "country": "UAE"
+    },
+    {
+      "normalized": "intel corporation uk limited bureau de rep",
+      "original": "Intel Corporation (UK) Ltd - Bureau De Rep",
+      "le": "LE422",
+      "source_site": "Swindon",
+      "country": "Morocco"
+    },
+    {
+      "normalized": "intel corporation uk limited bureau de representation afrique du nord",
+      "original": "Intel Corporation UK Ltd (Bureau de Representation, Afrique du Nord)",
+      "le": "LE422",
+      "source_site": "Swindon",
+      "country": "Morocco"
+    },
+    {
+      "normalized": "intel corporation uk limited",
+      "original": "Intel Corporation UK Ltd",
+      "le": "LE422",
+      "source_site": "Swindon",
+      "country": "Morocco"
+    },
+    {
+      "normalized": "intel corporation limited",
+      "original": "Intel Corporation Ltd",
+      "le": "LE422",
+      "source_site": "Swindon",
+      "country": "Morocco"
+    },
+    {
+      "normalized": "intel mobile communications uk limited",
+      "original": "Intel Mobile Communications UK Ltd",
+      "le": "LE427",
+      "source_site": "Swindon",
+      "country": "IMC Swindon"
+    },
+    {
+      "normalized": "mcafee security sarl",
+      "original": "McAfee Security SARL",
+      "le": "LE441",
+      "source_site": "Swindon",
+      "country": "Luxembourg"
+    },
+    {
+      "normalized": "intel security group",
+      "original": "Intel Security Group",
+      "le": "LE441",
+      "source_site": "Swindon",
+      "country": "Luxembourg"
+    },
+    {
+      "normalized": "intel corporation uk limited saudi arabia branch",
+      "original": "Intel Corporation (UK) Ltd. (Saudi Arabia Branch)",
+      "le": "LE456",
+      "source_site": "Swindon",
+      "country": "Saudi Arabia"
+    },
+    {
+      "normalized": "intel research and development uk limited dubai",
+      "original": "Intel R&D UK Ltd-Dubai",
+      "le": "LE457",
+      "source_site": "Swindon",
+      "country": ""
+    },
+    {
+      "normalized": "intel corporation uk limited kenya branch",
+      "original": "Intel Corporation (UK) Ltd (Kenya Branch)",
+      "le": "LE462",
+      "source_site": "Swindon",
+      "country": "Kenya"
+    },
+    {
+      "normalized": "intel corporation uk limited kenya",
+      "original": "Intel Corporation (UK) Ltd - Kenya",
+      "le": "LE462",
+      "source_site": "Swindon",
+      "country": "Kenya"
+    },
+    {
+      "normalized": "intel technology poland sp spzoo",
+      "original": "Intel Technology Poland SP z.o.o.",
+      "le": "LE466",
+      "source_site": "Swindon",
+      "country": "Poland"
+    },
+    {
+      "normalized": "mcafee poland sp spzoo",
+      "original": "McAfee Poland SP z.o.o.",
+      "le": "LE466",
+      "source_site": "Swindon",
+      "country": "Poland"
+    },
+    {
+      "normalized": "intel wroclaw sp spzoo",
+      "original": "Intel Wroclaw Sp. z o.o",
+      "le": "LE467",
+      "source_site": "Swindon",
+      "country": "Poland"
+    },
+    {
+      "normalized": "intel czech tradings inc",
+      "original": "Intel Czech Tradings Inc",
+      "le": "LE470",
+      "source_site": "Swindon",
+      "country": "Czech Republic"
+    },
+    {
+      "normalized": "intel czech trading inc",
+      "original": "Intel Czech Trading Inc",
+      "le": "LE470",
+      "source_site": "Swindon",
+      "country": "Czech Republic"
+    },
+    {
+      "normalized": "intel software development srl",
+      "original": "Intel Software Development SRL",
+      "le": "LE474",
+      "source_site": "Swindon",
+      "country": "Romania"
+    },
+    {
+      "normalized": "intel technologies doo belgrade",
+      "original": "Intel Technologies d.o.o. Belgrade",
+      "le": "LE489",
+      "source_site": "Swindon",
+      "country": "Serbia"
+    },
+    {
+      "normalized": "intel technologies doo",
+      "original": "Intel Technologies d.o.o.",
+      "le": "LE489",
+      "source_site": "Swindon",
+      "country": "Serbia"
+    },
+    {
+      "normalized": "intel ireland limited",
+      "original": "Intel Ireland Limited",
+      "le": "LE500",
+      "source_site": "Ireland",
+      "country": "Ireland"
+    },
+    {
+      "normalized": "intel research and development ireland limited",
+      "original": "Intel Research & Development Ireland Limited",
+      "le": "LE508",
+      "source_site": "Ireland",
+      "country": "Ireland"
+    },
+    {
+      "normalized": "intel shannon limited",
+      "original": "Intel Shannon Ltd.",
+      "le": "LE508",
+      "source_site": "Ireland",
+      "country": "Ireland"
+    },
+    {
+      "normalized": "mcafee ireland limited",
+      "original": "McAfee Ireland Ltd",
+      "le": "LE518",
+      "source_site": "Ireland",
+      "country": "Ireland"
+    },
+    {
+      "normalized": "intel corporation hungary trading limited liability company",
+      "original": "Intel Corporation Hungary Trading Limited Liability Company",
+      "le": "LE521",
+      "source_site": "Swindon",
+      "country": "Hungary"
+    },
+    {
+      "normalized": "intel corporation hungary trading llc",
+      "original": "Intel Corporation Hungary Trading LLC",
+      "le": "LE521",
+      "source_site": "Swindon",
+      "country": "Hungary"
+    },
+    {
+      "normalized": "intel corporation hungary kereskedelmi korlatolt feleossegu tarsasag",
+      "original": "Intel Corporation Hungary Kereskedelmi Korlatolt Feleossegu Tarsasag",
+      "le": "LE521",
+      "source_site": "Swindon",
+      "country": "Hungary"
+    },
+    {
+      "normalized": "intel corporation hungary kft",
+      "original": "Intel Corporation Hungary Kft",
+      "le": "LE521",
+      "source_site": "Swindon",
+      "country": "Hungary"
+    },
+    {
+      "normalized": "intel corporation hungary limited",
+      "original": "Intel Corporation Hungary Ltd",
+      "le": "LE521",
+      "source_site": "Swindon",
+      "country": "Hungary"
+    },
+    {
+      "normalized": "intel corporation hungary kereskedelmi kft",
+      "original": "Intel Corporation Hungary Kereskedelmi Kft",
+      "le": "LE521",
+      "source_site": "Swindon",
+      "country": "Hungary"
+    },
+    {
+      "normalized": "intel south africa corporation",
+      "original": "INTEL SOUTH AFRICA CORPORATION",
+      "le": "LE530",
+      "source_site": "Swindon",
+      "country": "South Africa"
+    },
+    {
+      "normalized": "intel semiconductor west africa limited",
+      "original": "Intel Semiconductor West Africa Ltd",
+      "le": "LE538",
+      "source_site": "Swindon",
+      "country": "Nigeria"
+    },
+    {
+      "normalized": "intel international bv",
+      "original": "Intel International BV",
+      "le": "LE540",
+      "source_site": "Swindon",
+      "country": ""
+    },
+    {
+      "normalized": "mcafee international bv",
+      "original": "McAfee International BV",
+      "le": "LE540",
+      "source_site": "Swindon",
+      "country": ""
+    },
+    {
+      "normalized": "intel austria gmbh",
+      "original": "Intel Austria GmbH",
+      "le": "LE543",
+      "source_site": "Germany",
+      "country": "Austria"
+    },
+    {
+      "normalized": "danube mobile communications engineering gmbh and co kg",
+      "original": "Danube Mobile Communications Engineering GmbH & Co KG",
+      "le": "LE544",
+      "source_site": "Germany",
+      "country": "Austria"
+    },
+    {
+      "normalized": "intel microprocessor greece sa",
+      "original": "Intel Microprocessor Greece SA",
+      "le": "LE560",
+      "source_site": "Swindon",
+      "country": "Greece"
+    },
+    {
+      "normalized": "intel microprocessor greece societe anonyme for the provision of consulting service",
+      "original": "Intel Microprocessor Greece Societe Anonyme for the Provision of Consulting Service",
+      "le": "LE560",
+      "source_site": "Swindon",
+      "country": "Greece"
+    },
+    {
+      "normalized": "intel micro microprocessor hellas sa",
+      "original": "Intel Micro Microprocessor Hellas SA",
+      "le": "LE560",
+      "source_site": "Swindon",
+      "country": "Greece"
+    },
+    {
+      "normalized": "intel m",
+      "original": "Intel Mικροεπεξεργαστή Ελλάδα ΑΕ",
+      "le": "LE560",
+      "source_site": "Swindon",
+      "country": "Greece"
+    },
+    {
+      "normalized": "intel teknoloji hizmetleri limited sirketi",
+      "original": "Intel Teknoloji Hizmetleri Limited Sirketi",
+      "le": "LE571",
+      "source_site": "Swindon",
+      "country": "Turkey"
+    },
+    {
+      "normalized": "intel teknoloji hizmetleri limited sirketi",
+      "original": "Intel Teknoloji Hiz LTD STI",
+      "le": "LE571",
+      "source_site": "Swindon",
+      "country": "Turkey"
+    },
+    {
+      "normalized": "intel mobile communications egypt llc",
+      "original": "Intel Mobile Communications Egypt LLC",
+      "le": "LE664",
+      "source_site": "Swindon",
+      "country": "Egypt"
+    },
+    {
+      "normalized": "intel corporation egypt llc",
+      "original": "Intel Corporation Egypt LLC",
+      "le": "LE665",
+      "source_site": "Swindon",
+      "country": "Egypt"
+    },
+    {
+      "normalized": "intel kabushiki kaisha",
+      "original": "Intel Kabushiki Kaisha",
+      "le": "LE650",
+      "source_site": "Japan",
+      "country": "Japan"
+    },
+    {
+      "normalized": "mcafee co limited",
+      "original": "McAfee Co. Ltd",
+      "le": "LE660",
+      "source_site": "Japan",
+      "country": "Japan"
+    },
+    {
+      "normalized": "intel msc sdn bhd",
+      "original": "Intel MSC Sdn Bhd",
+      "le": "LE735",
+      "source_site": "PNG",
+      "country": "Malaysia"
+    },
+    {
+      "normalized": "intel product m sdn bhd",
+      "original": "Intel Product (M) Sdn Bhd",
+      "le": "LE745",
+      "source_site": "PNG",
+      "country": "Malaysia"
+    },
+    {
+      "normalized": "intel technology sdn bhd",
+      "original": "Intel Technology Sdn Bhd",
+      "le": "LE750",
+      "source_site": "PNG",
+      "country": "Malaysia"
+    },
+    {
+      "normalized": "intel microelectronics m sdn bhd",
+      "original": "Intel Microelectronics (M) Sdn Bhd",
+      "le": "LE755",
+      "source_site": "PNG",
+      "country": "Malaysia"
+    },
+    {
+      "normalized": "representative office of intel em limited",
+      "original": "Representative Office of Intel EM Ltd",
+      "le": "LE758",
+      "source_site": "PNG",
+      "country": "Cambodia"
+    },
+    {
+      "normalized": "intel semiconductor us llc",
+      "original": "Intel Semiconductor (US) LLC",
+      "le": "LE760",
+      "source_site": "PNG",
+      "country": "Hong Kong"
+    },
+    {
+      "normalized": "intel asia holding limited",
+      "original": "Intel Asia Holding Ltd.",
+      "le": "LE761",
+      "source_site": "PNG",
+      "country": "Hong Kong"
+    },
+    {
+      "normalized": "intel products vietnam co limited",
+      "original": "Intel Products Vietnam Co Ltd",
+      "le": "LE763",
+      "source_site": "Vietnam",
+      "country": "Vietnam"
+    },
+    {
+      "normalized": "cong ty tnhh intel products vietnam",
+      "original": "Công Ty TNHH Intel Products ViệtNam",
+      "le": "LE763",
+      "source_site": "Vietnam",
+      "country": "Vietnam"
+    },
+    {
+      "normalized": "intel semiconductor limited",
+      "original": "Intel Semiconductor Ltd",
+      "le": "LE765",
+      "source_site": "PNG",
+      "country": "Hong Kong"
+    },
+    {
+      "normalized": "intel vietnam co limited",
+      "original": "Intel Vietnam Co Ltd",
+      "le": "LE766",
+      "source_site": "Vietnam",
+      "country": "Vietnam"
+    },
+    {
+      "normalized": "intel services apac inc",
+      "original": "Intel Services APAC Inc",
+      "le": "LE768",
+      "source_site": "PNG",
+      "country": "Hong Kong"
+    },
+    {
+      "normalized": "intel technology asia pte limited",
+      "original": "Intel Technology Asia Pte Ltd",
+      "le": "LE781",
+      "source_site": "PNG",
+      "country": "Singapore"
+    },
+    {
+      "normalized": "intel mobile communications south east asia pte limited",
+      "original": "Intel Mobile Communications South East Asia Pte Ltd",
+      "le": "LE787",
+      "source_site": "PNG",
+      "country": "Singapore"
+    },
+    {
+      "normalized": "intel microelectronics asia llc taiwan branch",
+      "original": "Intel Microelectronics Asia LLC Taiwan Branch",
+      "le": "LE791",
+      "source_site": "PNG",
+      "country": "Taiwan"
+    },
+    {
+      "normalized": "intel asia pacific limited taiwan branch",
+      "original": "Intel Asia-Pacific Ltd Taiwan Branch",
+      "le": "LE791",
+      "source_site": "PNG",
+      "country": "Taiwan"
+    },
+    {
+      "normalized": "intel microelectronics asia llc kaohsiung branch",
+      "original": "Intel Microelectronics Asia LLC Kaohsiung Branch",
+      "le": "LE794",
+      "source_site": "PNG",
+      "country": "Taiwan"
+    },
+    {
+      "normalized": "intel innovation technology limited",
+      "original": "Intel Innovation Technology Ltd",
+      "le": "LE796",
+      "source_site": "PNG",
+      "country": "Taiwan"
+    },
+    {
+      "normalized": "intel innovation technology limited",
+      "original": "英特尔创新科技股份有限公司",
+      "le": "LE796",
+      "source_site": "PNG",
+      "country": "Taiwan"
+    },
+    {
+      "normalized": "intel korea limited",
+      "original": "Intel Korea Ltd",
+      "le": "LE800",
+      "source_site": "Korea",
+      "country": "Korea"
+    },
+    {
+      "normalized": "intel mobile communications korea co limited",
+      "original": "Intel Mobile Communications Korea Co.Ltd",
+      "le": "LE811",
+      "source_site": "Korea",
+      "country": "Korea"
+    },
+    {
+      "normalized": "intel em limited ulaanbaatar",
+      "original": "Intel EM Ltd (Ulaanbaatar)",
+      "le": "LE816",
+      "source_site": "PNG",
+      "country": "Mongolia"
+    },
+    {
+      "normalized": "aepona international lanka private limited",
+      "original": "Aepona International Lanka (Private) Ltd",
+      "le": "LE827",
+      "source_site": "",
+      "country": ""
+    },
+    {
+      "normalized": "intel mobile communication india private india",
+      "original": "Intel Mobile Communication India Pvt India",
+      "le": "LE828",
+      "source_site": "India",
+      "country": "India IMC"
+    },
+    {
+      "normalized": "intel technology india private limited",
+      "original": "Intel Tech India Pvt.Ltd",
+      "le": "LE831",
+      "source_site": "India",
+      "country": "India"
+    },
+    {
+      "normalized": "mcafee sales india private limited",
+      "original": "McAfee Sales India Private Ltd",
+      "le": "LE841",
+      "source_site": "India",
+      "country": "India"
+    },
+    {
+      "normalized": "mcafee software india private limited",
+      "original": "McAfee Software (India) Private Ltd",
+      "le": "LE842",
+      "source_site": "India",
+      "country": "India"
+    },
+    {
+      "normalized": "intel pakistan corporation",
+      "original": "Intel Pakistan Corporation",
+      "le": "LE833",
+      "source_site": "PNG",
+      "country": "Pakistan"
+    },
+    {
+      "normalized": "intel indonesia corporation",
+      "original": "Intel Indonesia Corporation",
+      "le": "LE850",
+      "source_site": "PNG",
+      "country": "Indonesia"
+    },
+    {
+      "normalized": "intel microelectronics thailand limited",
+      "original": "Intel Microelectronics (Thailand) Ltd",
+      "le": "LE860",
+      "source_site": "PNG",
+      "country": "Thailand"
+    },
+    {
+      "normalized": "intel electronics m sdn bhd",
+      "original": "Intel Electronics (M) Sdn Bhd",
+      "le": "LE870",
+      "source_site": "PNG",
+      "country": "Malaysia"
+    },
+    {
+      "normalized": "intel microelectronics phils inc",
+      "original": "Intel Microelectronics Phils Inc",
+      "le": "LE880",
+      "source_site": "PNG",
+      "country": "Philippines"
+    },
+    {
+      "normalized": "intel australia pty limited",
+      "original": "Intel Australia Pty Ltd",
+      "le": "LE932",
+      "source_site": "PNG",
+      "country": "Australia"
+    },
+    {
+      "normalized": "mcafee new zealand limited",
+      "original": "McAfee New Zealand Ltd.",
+      "le": "LE930",
+      "source_site": "PNG",
+      "country": "New Zealand"
+    },
+    {
+      "normalized": "intel em limited sri lanka",
+      "original": "Intel EM Ltd (Sri Lanka)",
+      "le": "LE817",
+      "source_site": "PNG",
+      "country": "Colombo 5"
+    },
+    {
+      "normalized": "intel china limited shanghai",
+      "original": "Intel China Ltd., Shanghai",
+      "le": "LE776",
+      "source_site": "CN",
+      "country": "CHINA"
+    },
+    {
+      "normalized": "intel apac r and d limited shanghai",
+      "original": "Intel APAC R and D Ltd, Shanghai",
+      "le": "LE764",
+      "source_site": "CN",
+      "country": "CHINA"
+    },
+    {
+      "normalized": "intel trading limited shang shanghai",
+      "original": "Intel Trading Ltd.- Shang, Shanghai",
+      "le": "LE888",
+      "source_site": "CN",
+      "country": "CHINA"
+    },
+    {
+      "normalized": "intel china research center beijing",
+      "original": "Intel China Research Ctr, Beijing",
+      "le": "LE725",
+      "source_site": "CN",
+      "country": "CHINA"
+    }
+  ],
+  "norm_to_indices": {
+    "intel services division llc": [
+      0
+    ],
+    "intel corporation": [
+      1
+    ],
+    "intel corporation accounts payable": [
+      2
+    ],
+    "intel americas inc": [
+      3
+    ],
+    "intel federal llc": [
+      4
+    ],
+    "intel technology of canada": [
+      5
+    ],
+    "intel corporation sa": [
+      6
+    ],
+    "intel corporation nv": [
+      7
+    ],
+    "intel denmark aps": [
+      8
+    ],
+    "intel mobile communications denmark aps": [
+      9
+    ],
+    "intel semiconductor ag": [
+      10
+    ],
+    "intel corporation iberia sa": [
+      11
+    ],
+    "intel corporation iberia sl": [
+      12
+    ],
+    "intel corporation uk limited algeria liaison office": [
+      13
+    ],
+    "intel corporation uk algeria rep office": [
+      14
+    ],
+    "intel corporation uk algeria regus": [
+      15
+    ],
+    "intel corporation sas": [
+      16
+    ],
+    "societe intel corporation sas toulouse": [
+      17
+    ],
+    "societe intel corporation sas nice": [
+      18
+    ],
+    "sas intel corporation": [
+      19
+    ],
+    "intel mobile communications france sas": [
+      20
+    ],
+    "imc france sas": [
+      21
+    ],
+    "intel gmbh": [
+      22
+    ],
+    "lantiq beteiligungs gmbh and co kg": [
+      23
+    ],
+    "lantiq deutschland gmbh": [
+      24
+    ],
+    "intel finland oy": [
+      25
+    ],
+    "intel copenhagen aps": [
+      26
+    ],
+    "intel germany service gmbh": [
+      27
+    ],
+    "intel germany gmbh and co kg": [
+      28
+    ],
+    "intel mobile communications gmbh": [
+      29
+    ],
+    "intel deutschland gmbh": [
+      30
+    ],
+    "intel mobile gmbh": [
+      31
+    ],
+    "intel magdeburg gmbh": [
+      32
+    ],
+    "intel corporation italia spa": [
+      33
+    ],
+    "lantiq latvia sia": [
+      34
+    ],
+    "turbe distribucao e marketing de produtos electronicos turbe lda": [
+      35
+    ],
+    "turbe distribuicao e marketing de products electronics lda": [
+      36
+    ],
+    "intel finance bv": [
+      37
+    ],
+    "intel benelux bv": [
+      38
+    ],
+    "intel sweden aktiebolag": [
+      39,
+      40
+    ],
+    "mcafee norway as": [
+      41
+    ],
+    "intel research and development uk limited": [
+      42
+    ],
+    "intel corporation uk limited": [
+      43,
+      47
+    ],
+    "intel corporation uk limited dubai branch": [
+      44
+    ],
+    "intel corporation uk limited bureau de rep": [
+      45
+    ],
+    "intel corporation uk limited bureau de representation afrique du nord": [
+      46
+    ],
+    "intel corporation limited": [
+      48
+    ],
+    "intel mobile communications uk limited": [
+      49
+    ],
+    "mcafee security sarl": [
+      50
+    ],
+    "intel security group": [
+      51
+    ],
+    "intel corporation uk limited saudi arabia branch": [
+      52
+    ],
+    "intel research and development uk limited dubai": [
+      53
+    ],
+    "intel corporation uk limited kenya branch": [
+      54
+    ],
+    "intel corporation uk limited kenya": [
+      55
+    ],
+    "intel technology poland sp spzoo": [
+      56
+    ],
+    "mcafee poland sp spzoo": [
+      57
+    ],
+    "intel wroclaw sp spzoo": [
+      58
+    ],
+    "intel czech tradings inc": [
+      59
+    ],
+    "intel czech trading inc": [
+      60
+    ],
+    "intel software development srl": [
+      61
+    ],
+    "intel technologies doo belgrade": [
+      62
+    ],
+    "intel technologies doo": [
+      63
+    ],
+    "intel ireland limited": [
+      64
+    ],
+    "intel research and development ireland limited": [
+      65
+    ],
+    "intel shannon limited": [
+      66
+    ],
+    "mcafee ireland limited": [
+      67
+    ],
+    "intel corporation hungary trading limited liability company": [
+      68
+    ],
+    "intel corporation hungary trading llc": [
+      69
+    ],
+    "intel corporation hungary kereskedelmi korlatolt feleossegu tarsasag": [
+      70
+    ],
+    "intel corporation hungary kft": [
+      71
+    ],
+    "intel corporation hungary limited": [
+      72
+    ],
+    "intel corporation hungary kereskedelmi kft": [
+      73
+    ],
+    "intel south africa corporation": [
+      74
+    ],
+    "intel semiconductor west africa limited": [
+      75
+    ],
+    "intel international bv": [
+      76
+    ],
+    "mcafee international bv": [
+      77
+    ],
+    "intel austria gmbh": [
+      78
+    ],
+    "danube mobile communications engineering gmbh and co kg": [
+      79
+    ],
+    "intel microprocessor greece sa": [
+      80
+    ],
+    "intel microprocessor greece societe anonyme for the provision of consulting service": [
+      81
+    ],
+    "intel micro microprocessor hellas sa": [
+      82
+    ],
+    "intel m": [
+      83
+    ],
+    "intel teknoloji hizmetleri limited sirketi": [
+      84,
+      85
+    ],
+    "intel mobile communications egypt llc": [
+      86
+    ],
+    "intel corporation egypt llc": [
+      87
+    ],
+    "intel kabushiki kaisha": [
+      88
+    ],
+    "mcafee co limited": [
+      89
+    ],
+    "intel msc sdn bhd": [
+      90
+    ],
+    "intel product m sdn bhd": [
+      91
+    ],
+    "intel technology sdn bhd": [
+      92
+    ],
+    "intel microelectronics m sdn bhd": [
+      93
+    ],
+    "representative office of intel em limited": [
+      94
+    ],
+    "intel semiconductor us llc": [
+      95
+    ],
+    "intel asia holding limited": [
+      96
+    ],
+    "intel products vietnam co limited": [
+      97
+    ],
+    "cong ty tnhh intel products vietnam": [
+      98
+    ],
+    "intel semiconductor limited": [
+      99
+    ],
+    "intel vietnam co limited": [
+      100
+    ],
+    "intel services apac inc": [
+      101
+    ],
+    "intel technology asia pte limited": [
+      102
+    ],
+    "intel mobile communications south east asia pte limited": [
+      103
+    ],
+    "intel microelectronics asia llc taiwan branch": [
+      104
+    ],
+    "intel asia pacific limited taiwan branch": [
+      105
+    ],
+    "intel microelectronics asia llc kaohsiung branch": [
+      106
+    ],
+    "intel innovation technology limited": [
+      107,
+      108
+    ],
+    "intel korea limited": [
+      109
+    ],
+    "intel mobile communications korea co limited": [
+      110
+    ],
+    "intel em limited ulaanbaatar": [
+      111
+    ],
+    "aepona international lanka private limited": [
+      112
+    ],
+    "intel mobile communication india private india": [
+      113
+    ],
+    "intel technology india private limited": [
+      114
+    ],
+    "mcafee sales india private limited": [
+      115
+    ],
+    "mcafee software india private limited": [
+      116
+    ],
+    "intel pakistan corporation": [
+      117
+    ],
+    "intel indonesia corporation": [
+      118
+    ],
+    "intel microelectronics thailand limited": [
+      119
+    ],
+    "intel electronics m sdn bhd": [
+      120
+    ],
+    "intel microelectronics phils inc": [
+      121
+    ],
+    "intel australia pty limited": [
+      122
+    ],
+    "mcafee new zealand limited": [
+      123
+    ],
+    "intel em limited sri lanka": [
+      124
+    ],
+    "intel china limited shanghai": [
+      125
+    ],
+    "intel apac r and d limited shanghai": [
+      126
+    ],
+    "intel trading limited shang shanghai": [
+      127
+    ],
+    "intel china research center beijing": [
+      128
+    ]
+  }
+}
