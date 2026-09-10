@@ -328,33 +328,140 @@ with ctrl2:
              help="Turn off to hide the preview column and widen the details panel.")
 
 
-# --- Input paths ---
-col_src, col_tgt = st.columns(2)
-with col_src:
-    source_path = st.text_input(
-        "📂 Source folder",
-        placeholder="C:\\path\\to\\invoices",
-        help="Parent folder containing subfolders. Each subfolder holds "
-             "invoice PDFs and optional Excel attachments.",
+# --- Source type ------------------------------------------------------------
+source_mode = st.radio(
+    "Source",
+    options=["pdf_folder", "email_source", "latest_run"],
+    format_func=lambda m: {
+        "pdf_folder": "📂 Loose PDF folders",
+        "email_source": "📧 Email files (.msg / .eml)",
+        "latest_run": "🔁 Reuse latest run",
+    }[m],
+    horizontal=True,
+    key="source_mode",
+)
+
+pipeline = load_pipeline()
+
+source_path = target_path = None   # used by the pdf_folder branch below
+
+if source_mode == "pdf_folder":
+    col_src, col_tgt = st.columns(2)
+    with col_src:
+        source_path = st.text_input(
+            "📂 Source folder",
+            placeholder="C:\\path\\to\\invoices",
+            help="Parent folder containing subfolders. Each subfolder holds "
+                 "invoice PDFs and optional Excel attachments.",
+        )
+    with col_tgt:
+        target_path = st.text_input(
+            "📁 Target folder",
+            placeholder="C:\\path\\to\\output",
+            help="Where split invoices will be saved, mirroring the source "
+                 "directory structure.",
+        )
+
+elif source_mode == "email_source":
+    col_src, col_tgt = st.columns(2)
+    with col_src:
+        email_source_path = st.text_input(
+            "📧 Email source folder (.msg / .eml)",
+            value=pipeline.msg_reader.DEFAULT_MSG_SOURCE,
+            help="Folder of .msg and/or .eml files. Both types in the same "
+                 "folder are picked up automatically.",
+        )
+    with col_tgt:
+        results_root_path = st.text_input(
+            "📁 Results root",
+            value=pipeline.msg_reader.DEFAULT_RESULTS_ROOT,
+            help="Each run creates its own dated, timestamped folder here.",
+        )
+
+else:  # latest_run
+    results_root_path = st.text_input(
+        "📁 Results root",
+        value=pipeline.msg_reader.DEFAULT_RESULTS_ROOT,
+        help="Reprocesses the most recent run found under this folder for "
+             "today, without re-reading the original emails.",
     )
-with col_tgt:
-    target_path = st.text_input(
-        "📁 Target folder",
-        placeholder="C:\\path\\to\\output",
-        help="Where split invoices will be saved, mirroring the source "
-             "directory structure.",
-    )
+    latest = pipeline.msg_reader.find_latest_run(results_root_path)
+    if latest:
+        st.info(f"Will reuse: **{latest['run_name']}**")
+    else:
+        st.warning("No run found for today under this results root yet.")
 
 
-# --- Scan + Summary ---
-if source_path and target_path:
+# --- Input paths (loose PDF folders) -----------------------------------------
+
+
+# --- Shared event driver -----------------------------------------------------
+def _drive_events(events, progress_bar, status_text, live_results_area):
+    """Consume any of the pipeline's run generators and update the UI as
+    events arrive. Shared across all three source modes so the progress/
+    blocked/error handling is written once, not three times.
+    """
+    for event in events:
+        kind = event["type"]
+
+        if kind == "run_ready":
+            run = event["run"]
+            st.session_state["run_info"] = run
+            with live_results_area:
+                st.info(f"📁 Run: **{run['run_name']}**")
+                st.caption(f"Extracted: `{run['extracted']}`  ·  "
+                          f"Processed: `{run['processed']}`")
+
+        elif kind == "msg_progress":
+            status_text.text(f"Reading emails: {event['file_name']} "
+                             f"({event['current']}/{event['total']})")
+            progress_bar.progress(event["current"] / max(event["total"], 1))
+
+        elif kind == "msg_done":
+            st.session_state["msg_done_info"] = event
+            if event["blocked"] or event["failed"]:
+                with live_results_area:
+                    with st.expander(
+                        f"⚠️ {event['blocked']} blocked, {event['failed']} failed "
+                        f"during email extraction", expanded=True):
+                        for r in event["results"]:
+                            if r.get("blocked"):
+                                name = Path(r["msg_path"]).name
+                                st.warning(f"**{name}** — "
+                                         f"{'; '.join(r['block_reasons'])}")
+                            elif r.get("error"):
+                                name = Path(r["msg_path"]).name
+                                st.error(f"**{name}** — {r['error']}")
+
+        elif kind == "progress":
+            status_text.text(f"Processing {event['folder_name']}/{event['file_name']} "
+                             f"({event['current']}/{event['total']})")
+            progress_bar.progress(event["current"] / max(event["total"], 1))
+
+        elif kind == "folder_done":
+            folder_result = event["folder_result"]
+            st.session_state["results"].append(folder_result)
+            with live_results_area:
+                render_folder_block(folder_result)
+
+        elif kind == "complete":
+            st.session_state["report_bytes"] = event.get("report_bytes")
+            if event.get("report_path"):
+                st.session_state["report_path"] = event["report_path"]
+
+        elif kind == "error":
+            st.error(f"❌ {event['message']}")
+            st.session_state["run_error"] = event["message"]
+
+
+# --- Scan + Summary: PDF FOLDER mode ----------------------------------------
+if source_mode == "pdf_folder" and source_path and target_path:
     scan = scan_source_folder(source_path)
 
     if "error" in scan:
         st.error(scan["error"])
         st.stop()
 
-    # Overall summary metrics
     st.markdown("---")
     st.subheader("Summary")
     m1, m2, m3 = st.columns(3)
@@ -362,7 +469,6 @@ if source_path and target_path:
     m2.metric("PDF files", scan["total_pdfs"])
     m3.metric("Excel files", scan["total_excels"])
 
-    # Per-folder file inventory (before processing)
     with st.expander("File inventory (click to expand)", expanded=False):
         for f in scan["folders"]:
             st.markdown(f"**{f['name']}/** — "
@@ -378,31 +484,76 @@ if source_path and target_path:
         st.warning("No PDF files found in any subfolder.")
         st.stop()
 
-    # --- Process button ---
     if st.button("🚀 Process All Invoices", type="primary",
                  use_container_width=True):
-        st.session_state["results"] = []     # fresh run -- discard prior results
+        st.session_state["results"] = []
         st.session_state["report_bytes"] = None
         progress_bar = st.progress(0)
         status_text = st.empty()
-        live_results_area = st.container()  # folder blocks appear here as they finish
+        live_results_area = st.container()
 
-        pipeline = load_pipeline()
-        # process_invoice_folders() owns the batch loop AND the final
-        # Excel report -- this just drives it and renders whatever it
-        # yields, folder by folder, as soon as each one finishes.
-        for event in pipeline.process_invoice_folders(scan["folders"], target_path):
-            if event["type"] == "progress":
-                status_text.text(f"Processing {event['folder_name']}/{event['file_name']} "
-                                 f"({event['current']}/{event['total']})")
-                progress_bar.progress(event["current"] / max(event["total"], 1))
-            elif event["type"] == "folder_done":
-                folder_result = event["folder_result"]
-                st.session_state["results"].append(folder_result)
-                with live_results_area:
-                    render_folder_block(folder_result)
-            elif event["type"] == "complete":
-                st.session_state["report_bytes"] = event["report_bytes"]
+        _drive_events(
+            pipeline.process_invoice_folders(scan["folders"], target_path),
+            progress_bar, status_text, live_results_area,
+        )
+
+        progress_bar.empty()
+        status_text.empty()
+        st.rerun()
+
+
+# --- Scan + Summary: EMAIL SOURCE mode --------------------------------------
+elif source_mode == "email_source" and email_source_path and results_root_path:
+    st.markdown("---")
+    if not Path(email_source_path).is_dir():
+        st.error(f"'{email_source_path}' is not a valid directory.")
+        st.stop()
+
+    email_files = [p for p in Path(email_source_path).iterdir()
+                  if p.is_file() and p.suffix.lower() in {".msg", ".eml"}]
+    st.subheader("Summary")
+    m1, m2 = st.columns(2)
+    m1.metric(".msg files", sum(1 for p in email_files if p.suffix.lower() == ".msg"))
+    m2.metric(".eml files", sum(1 for p in email_files if p.suffix.lower() == ".eml"))
+
+    if not email_files:
+        st.warning("No .msg or .eml files found in this folder.")
+        st.stop()
+
+    if st.button("📧 Extract Emails && Process Invoices", type="primary",
+                 use_container_width=True):
+        st.session_state["results"] = []
+        st.session_state["report_bytes"] = None
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+        live_results_area = st.container()
+
+        _drive_events(
+            pipeline.run_from_msg_source(email_source_path, results_root_path),
+            progress_bar, status_text, live_results_area,
+        )
+
+        progress_bar.empty()
+        status_text.empty()
+        st.rerun()
+
+
+# --- LATEST RUN mode ---------------------------------------------------------
+elif source_mode == "latest_run" and results_root_path:
+    st.markdown("---")
+    if st.button("🔁 Reprocess Latest Run", type="primary",
+                 use_container_width=True,
+                 disabled=not pipeline.msg_reader.find_latest_run(results_root_path)):
+        st.session_state["results"] = []
+        st.session_state["report_bytes"] = None
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+        live_results_area = st.container()
+
+        _drive_events(
+            pipeline.run_from_latest_extracted(results_root_path),
+            progress_bar, status_text, live_results_area,
+        )
 
         progress_bar.empty()
         status_text.empty()
@@ -463,5 +614,9 @@ if "results" in st.session_state:
         st.rerun()
 
 else:
-    if not (source_path and target_path):
+    if source_mode == "pdf_folder" and not (source_path and target_path):
         st.info("Enter source and target folder paths above to begin.")
+    elif source_mode == "email_source" and not (email_source_path and results_root_path):
+        st.info("Enter the email source and results root paths above to begin.")
+    elif source_mode == "latest_run" and not results_root_path:
+        st.info("Enter a results root above to begin.")

@@ -26,6 +26,7 @@ Requires GROQ_API_KEY.
 
 import json
 import logging
+import os
 import re
 import sys
 from pathlib import Path
@@ -37,22 +38,44 @@ from rapidfuzz import fuzz
 # Local modules (must be importable from the same folder).
 import signals
 import extraction
+import tags
+import routing
+import batch_report_builder
+import email_sender
 from matcher_le import SensitiveMatcher, LEMatcher,LE_THRESHOLD
 from vietnam_renamer import (
     VietnamSupplierMatcher, GoogleTranslateTranslator, process_vietnam_invoice, QwenTranslator
 )
+from dotenv import load_dotenv
+load_dotenv()
 
 translator = QwenTranslator()
+
+# File was renamed msg_reader.py -> email_reader.py (added .eml support
+# alongside .msg) -- aliased here so the 9 existing msg_reader.X
+# references elsewhere in this file don't all need renaming individually.
+import email_reader as msg_reader
 vietnam_translator = QwenTranslator()
 
+# Excel-sheet attachment is off. Set True to re-enable; the returned
+# "excel_attachment" key exists either way, so nothing downstream breaks.
+ENABLE_EXCEL_ATTACHMENT = False
 
-SENSITIVE_REFERENCE_PATH = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\GenAI-OCR-P2P-Protyping\Supporting Documents\sensitive_reference.json"
+# Kofax routing emails + the human-agent report are DRY-RUN by default --
+# messages are built and logged, no SMTP connection is opened, nothing is
+# actually sent. Flip to False only once email_sender.SENDER_EMAIL /
+# ROUTING_CC / REPORT_AGENT_EMAIL are filled in with real addresses and
+# you've reviewed a dry-run's log output.
+EMAIL_DRY_RUN = True
+
+
+SENSITIVE_REFERENCE_PATH = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\p2p-prefinal-version\Supporting Documents\sensitive_reference.json"
 sensitive_matcher = SensitiveMatcher(SENSITIVE_REFERENCE_PATH)
 
-LE_REFERENCE_PATH = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\GenAI-OCR-P2P-Protyping\Supporting Documents\le_reference.json"
+LE_REFERENCE_PATH = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\p2p-prefinal-version\Supporting Documents\le_reference.json"
 le_matcher = LEMatcher(LE_REFERENCE_PATH)
 
-VIETNAM_REFERENCE_PATH = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\GenAI-OCR-P2P-Protyping\Supporting Documents\vietnam_reference.json"
+VIETNAM_REFERENCE_PATH = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\p2p-prefinal-version\Supporting Documents\vietnam_reference.json"
 vietnam_matcher = VietnamSupplierMatcher(VIETNAM_REFERENCE_PATH)
 
 
@@ -73,7 +96,7 @@ SUPPLIER_MATCH_THRESHOLD = 85
 # --- Kofax routing table (loaded from Excel) --------------------------------
 import pandas as pd
 
-ROUTING_XLSX = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\GenAI-OCR-P2P-Protyping\Supporting Documents\Legal Entity Lists.xlsx"
+ROUTING_XLSX = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\p2p-prefinal-version\Supporting Documents\Legal Entity Lists.xlsx"
 
 
 def load_routing_table(xlsx_path: str, sheet: str = "kofax_table") -> dict:
@@ -423,6 +446,25 @@ def process_invoice_pdf(pdf_path: str, output_dir: Optional[str] = None) -> dict
         log.info("  sensitive check: %s (score=%s, matched=%r)",
                  sens["is_sensitive"], sens["score"], sens["matched_name"])
 
+        # --- Tag derivation: TELECOM / UTILITY / DD (feeds batch_id suffix) ---
+        # IMPORTANT: source_folder must be `pdf_path` (the ORIGINAL,
+        # pre-split PDF, living under 01_extracted/), NOT `out_file` (the
+        # split-out PDF written to 03_processed/) -- email_metadata.json
+        # only ever exists next to the original in 01_extracted/, the same
+        # place excel_attachment.py already looks for its paired Excel.
+        # load_email_metadata() accepts a file path directly and walks up
+        # to 2 levels, so this works whether pdf_path sits flat in the
+        # message folder or one level down in a per-invoice subfolder.
+        # For loose-PDF-folder / single_pdf runs with no email_metadata.json
+        # at all, this degrades gracefully to supplier/bill-to-only matching.
+        invoice_tags = tags.derive_tags(
+            supplier_name=fields["supplier_name"],
+            bill_to_name=fields["bill_to_client_name"],
+            source_folder=pdf_path,
+        )
+        if invoice_tags:
+            log.info("  tags: %s", invoice_tags)
+
         # --- LE matching (Phase 2) ---
         le_result = le_matcher.match(fields["bill_to_client_name"], translator=translator)
         if le_result["matched"]:
@@ -520,6 +562,7 @@ def process_invoice_pdf(pdf_path: str, output_dir: Optional[str] = None) -> dict
             "bill_to_client_name": fields["bill_to_client_name"],
             "po_numbers": fields["po_numbers"],
             "is_sensitive": sens["is_sensitive"],
+            "tags": invoice_tags,
             "sensitive_match": {
                 "matched_name": sens["matched_name"],
                 "score": sens["score"],
@@ -546,20 +589,26 @@ def process_invoice_pdf(pdf_path: str, output_dir: Optional[str] = None) -> dict
             "review_reasons": review_reasons,
         })
 
-    # 6) Attach a supporting Excel sheet (if exactly one exists) to the
-    #    last invoice's split PDF -- run AFTER the loop above, since the
-    #    attachment matcher needs a confirmed invoice_number to search
-    #    sheets for, and that's only known once extraction has run.
-    from excel_attachment import attach_excel_to_last_invoice
-    last_invoice_number = results[-1]["invoice_number"] if results else None
-    excel_result = attach_excel_to_last_invoice(pdf_path, written, last_invoice_number)
-    if excel_result["attached"]:
-        log.info("Excel attachment: sheet %r from %s appended to %s",
-                 excel_result["sheet_name"],
-                 Path(excel_result["excel_path"]).name,
-                 Path(written[-1]).name)
+    # 6) Attach a supporting Excel sheet to the last invoice's split PDF.
+    #    DISABLED -- flip ENABLE_EXCEL_ATTACHMENT at the top of this file
+    #    to turn it back on. The stub below keeps "excel_attachment" in the
+    #    returned dict either way, so report_builder.py and app.py never
+    #    hit a missing key.
+    if ENABLE_EXCEL_ATTACHMENT:
+        from excel_attachment import attach_excel_to_last_invoice
+        last_invoice_number = results[-1]["invoice_number"] if results else None
+        excel_result = attach_excel_to_last_invoice(pdf_path, written, last_invoice_number)
+        if excel_result["attached"]:
+            log.info("Excel attachment: sheet %r from %s appended to %s",
+                     excel_result["sheet_name"],
+                     Path(excel_result["excel_path"]).name,
+                     Path(written[-1]).name)
+        else:
+            log.info("Excel attachment: %s", excel_result["reason"])
     else:
-        log.info("Excel attachment: %s", excel_result["reason"])
+        excel_result = {"attached": False, "excel_path": None,
+                        "sheet_name": None, "candidate_sheets": [],
+                        "reason": "disabled"}
 
     # NOTE: the following were previously indented one level too deep (inside
     # this for-loop), which caused process_invoice_pdf() to return after
@@ -661,23 +710,351 @@ def process_invoice_folders(scan_folders: List[dict], target_path: str):
     yield {"type": "complete", "results": all_results, "report_bytes": report_bytes}
 
 
+# ---------------------------------------------------------------------------
+# Folder scanning
+# ---------------------------------------------------------------------------
+_PDF_EXT = {".pdf"}
+_EXCEL_EXT = {".xlsx", ".xlsm", ".xls"}
+
+
+def scan_pdf_folder(source_path: str) -> List[dict]:
+    """Scan a folder of subfolders, each holding invoice PDFs.
+
+    This is the "loose PDFs in a folder" testing workflow -- msg_reader is
+    NOT involved. Mirrors what app.py's own scan_source_folder() does, so
+    the same layout works from the CLI.
+
+    Returns the scan_folders list process_invoice_folders() expects.
+    """
+    root = Path(source_path)
+    if not root.is_dir():
+        raise NotADirectoryError(f"{source_path} is not a directory")
+
+    subdirs = sorted([d for d in root.iterdir() if d.is_dir()])
+    if not subdirs:                     # no subfolders -> treat root itself as one
+        subdirs = [root]
+
+    folders = []
+    for d in subdirs:
+        pdfs = sorted([f for f in d.iterdir()
+                      if f.is_file() and f.suffix.lower() in _PDF_EXT])
+        if not pdfs:
+            continue
+        excels = sorted([f for f in d.iterdir()
+                        if f.is_file() and f.suffix.lower() in _EXCEL_EXT
+                        and not f.name.startswith("~$")])
+        folders.append({"name": d.name, "path": d, "pdfs": pdfs, "excels": excels})
+    return folders
+
+
+def scan_extracted_folder(extracted_root: str) -> List[dict]:
+    """Scan msg_reader's 01_extracted/ output into scan_folders entries.
+
+    ONE ENTRY PER MESSAGE -- every invoice from a single email stays
+    together in one output folder, which keeps the email-level traceability
+    that the batching/routing step needs.
+
+    Message folders come in two shapes, and a naive one-level scan misses
+    the second entirely:
+        <msg>/invoice.pdf                (flat -- message had <=1 PDF)
+        <msg>/INV001/invoice.pdf         (grouped -- message had 2+ PDFs)
+    rglob covers both. msg_reader collapses deeper zip paths into a single
+    folder name (a/b -> a_b), so today this is always at most two levels --
+    but rglob means this keeps working if that ever changes.
+
+    NOTE: collecting a message's PDFs into one entry does NOT undo
+    msg_reader's grouping. excel_attachment.py locates its Excel from the
+    PDF's OWN parent directory on disk, not from this entry, so each PDF
+    still pairs with the single Excel sitting beside it.
+    """
+    root = Path(extracted_root)
+    if not root.is_dir():
+        raise NotADirectoryError(f"{extracted_root} is not a directory")
+
+    folders = []
+    for msg_dir in sorted(d for d in root.iterdir() if d.is_dir()):
+        pdfs = sorted(p for p in msg_dir.rglob("*")
+                     if p.is_file() and p.suffix.lower() in _PDF_EXT)
+        if not pdfs:
+            continue                    # blocked or attachment-less message
+        excels = sorted(p for p in msg_dir.rglob("*")
+                       if p.is_file() and p.suffix.lower() in _EXCEL_EXT
+                       and not p.name.startswith("~$"))
+        folders.append({"name": msg_dir.name, "path": msg_dir,
+                       "pdfs": pdfs, "excels": excels})
+    return folders
+
+
+# ---------------------------------------------------------------------------
+# End-to-end runs
+# ---------------------------------------------------------------------------
+def _run_extracted(run: dict, extracted_root: str):
+    """Shared tail: scan an extracted folder, process it, save the report
+    into the run folder. Used by both .msg runs and latest-run reruns."""
+    folders = scan_extracted_folder(extracted_root)
+    if not folders:
+        yield {"type": "error",
+               "message": f"No PDFs found under {extracted_root}"}
+        return
+
+    for event in process_invoice_folders(folders, run["processed"]):
+        if event["type"] == "complete" and event.get("report_bytes"):
+            Path(run["report_path"]).write_bytes(event["report_bytes"])
+            event = dict(event, report_path=run["report_path"])
+
+            # --- Batching + second report (routing.py / batch_report_builder.py) ---
+            batch_complete = None
+            for batch_event in routing.process_batches(event["results"], run):
+                if batch_event["type"] == "complete":
+                    batch_complete = batch_event
+                else:
+                    yield batch_event  # "quarantine" / "batch_done" progress
+
+            if batch_complete is not None:
+                success_rows = batch_report_builder.flatten_success_rows(
+                    batch_complete["clean_folders"],
+                    batch_complete["email_to_batch_ids"],
+                )
+                failure_rows = batch_report_builder.flatten_failure_rows(
+                    batch_complete["failure_rows"]
+                )
+                batch_report_bytes = batch_report_builder.build_batch_report(
+                    success_rows, failure_rows
+                )
+                batch_report_name = msg_reader.report_filename(
+                    "batch_report", Path(run["date_dir"]).name, Path(run["run_root"]).name
+                )
+                batch_report_path = str(Path(run["run_root"]) / batch_report_name)
+                Path(batch_report_path).write_bytes(batch_report_bytes)
+                event = dict(event, batch_report_path=batch_report_path,
+                            batches=batch_complete["batches"])
+
+                # --- Send emails: Kofax routing, then the human-agent report ---
+                smtp_password = "Banana@1026"# os.environ.get("SMTP_PASSWORD")
+                if smtp_password is None:
+                    log.warning("SMTP_PASSWORD not set in the environment -- "
+                              "skipping ALL email sending for this run "
+                              "(routing emails and the human-agent report).")
+                else:
+                    annotated_batches = email_sender.send_routing_emails(
+                        batch_complete["batches"],
+                        sender=email_sender.SENDER_EMAIL,
+                        password=smtp_password,
+                        cc=email_sender.ROUTING_CC,
+                        dry_run=EMAIL_DRY_RUN,
+                    )
+                    yield {"type": "routing_emails_done", "batches": annotated_batches}
+
+                    run_stats = email_sender.compute_run_stats(
+                        annotated_batches, batch_complete["quarantined"]
+                    )
+                    email_sender.send_report_email(
+                        run_stats, batch_complete["quarantined"],
+                        invoice_report_path=run["report_path"],
+                        batch_report_path=batch_report_path,
+                        run_root=run["run_root"],
+                        agent_email=email_sender.REPORT_AGENT_EMAIL,
+                        sender=email_sender.SENDER_EMAIL,
+                        password=smtp_password,
+                        cc=email_sender.ROUTING_CC,
+                        run_label=run["run_name"],
+                        dry_run=EMAIL_DRY_RUN,
+                    )
+                    event = dict(event, email_stats=run_stats)
+
+        yield event
+
+
+def run_from_msg_source(msg_folder: Optional[str] = None,
+                       results_root: Optional[str] = None,
+                       label: Optional[str] = None,
+                       move_blocked_msg: bool = False):
+    """Full .msg pipeline: extract attachments -> process invoices ->
+    write the report, all inside one timestamped run folder.
+
+    Generator, so a UI can show progress. Yields everything
+    process_invoice_folders() yields, plus:
+
+      {"type": "run_ready", "run": {...}}
+        -- FIRST, carrying every run path so the UI can display where
+        output is going before any slow work starts.
+
+      {"type": "msg_progress", "current", "total", "file_name"}
+        -- one .msg parsed (extraction happens before PDF processing).
+
+      {"type": "msg_done", "parsed", "blocked", "failed", "results"}
+        -- extraction finished, PDF processing about to begin.
+
+      {"type": "error", "message"}
+        -- nothing usable found; the run stops here.
+    """
+    msg_folder = msg_folder or msg_reader.DEFAULT_MSG_SOURCE
+    run = msg_reader.make_run_folders(results_root, label=label)
+    yield {"type": "run_ready", "run": run}
+
+    source = Path(msg_folder)
+    if not source.is_dir():
+        yield {"type": "error", "message": f"{msg_folder} is not a directory"}
+        return
+
+    msg_files = sorted(p for p in source.iterdir()
+                      if p.is_file() and p.suffix.lower() in msg_reader.SUPPORTED_EMAIL_TYPES)
+    if not msg_files:
+        yield {"type": "error", "message": f"No .msg/.eml files in {msg_folder}"}
+        return
+
+    # Parsed one at a time rather than via scan_email_folder() so the UI gets
+    # per-file progress instead of one long silent pause.
+    msg_results = []
+    for i, msg_file in enumerate(msg_files, start=1):
+        yield {"type": "msg_progress", "current": i, "total": len(msg_files),
+               "file_name": msg_file.name}
+        try:
+            msg_results.append(msg_reader.parse_email(
+                str(msg_file), run["extracted"],
+                blocked_root=run["blocked"],
+                move_blocked_msg=move_blocked_msg))
+        except Exception as e:
+            log.warning("Failed to parse %s: %s", msg_file.name, e)
+            msg_results.append({"msg_path": str(msg_file), "error": str(e),
+                               "blocked": False, "block_reasons": []})
+
+    blocked = sum(1 for r in msg_results if r.get("blocked"))
+    failed = sum(1 for r in msg_results if r.get("error"))
+    yield {"type": "msg_done",
+           "parsed": len(msg_results) - blocked - failed,
+           "blocked": blocked, "failed": failed, "results": msg_results}
+
+    yield from _run_extracted(run, run["extracted"])
+
+
+def run_from_latest_extracted(results_root: Optional[str] = None,
+                             date: Optional[str] = None):
+    """Re-process the most recent run's already-extracted attachments,
+    without re-reading the .msg files. Same events as
+    run_from_msg_source(), minus the msg_* ones."""
+    run = msg_reader.find_latest_run(results_root, date=date)
+    if run is None:
+        day = date or "today"
+        yield {"type": "error",
+               "message": f"No run folder found for {day} under "
+                          f"{results_root or msg_reader.DEFAULT_RESULTS_ROOT}"}
+        return
+
+    yield {"type": "run_ready", "run": run}
+    Path(run["processed"]).mkdir(parents=True, exist_ok=True)
+    yield from _run_extracted(run, run["extracted"])
+
+
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        pdf_path = sys.argv[1]
+    # ------------------------------------------------------------------
+    # MODE picks what this script does. "single_pdf" is the default and
+    # behaves exactly as before -- the loose-PDF testing workflow is
+    # untouched.
+    #
+    #   "single_pdf"  one PDF file            -> process_invoice_pdf()
+    #   "pdf_folder"  folder of subfolders    -> scan_pdf_folder()
+    #                 holding PDFs                + process_invoice_folders()
+    #                 (no msg_reader involved)
+    #   "msg_source"  folder of .msg files    -> run_from_msg_source()
+    #                 (extract + process, new run folder)
+    #   "latest_run"  reuse today's latest    -> run_from_latest_extracted()
+    #                 extracted output
+    # ------------------------------------------------------------------
+    MODE = "single_pdf"
+
+    SINGLE_PDF = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\GenAI-OCR-P2P-Protyping\sample-invoices\LE100 PO.pdf"
+    PDF_FOLDER = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\GenAI-OCR-P2P-Protyping\sample-invoices"
+    MSG_FOLDER = msg_reader.DEFAULT_MSG_SOURCE
+    RESULTS_ROOT = msg_reader.DEFAULT_RESULTS_ROOT
+
+    def _drive(events):
+        """Consume a run generator, printing progress as it goes."""
+        final = None
+        for event in events:
+            kind = event["type"]
+            if kind == "run_ready":
+                run = event["run"]
+                print(f"\nRun folder : {run['run_name']}")
+                print(f"  extracted: {run['extracted']}")
+                print(f"  blocked  : {run['blocked']}")
+                print(f"  processed: {run['processed']}\n")
+            elif kind == "msg_progress":
+                print(f"  [msg {event['current']}/{event['total']}] {event['file_name']}")
+            elif kind == "msg_done":
+                print(f"\n  extracted: {event['parsed']} parsed, "
+                      f"{event['blocked']} blocked, {event['failed']} failed\n")
+            elif kind == "progress":
+                print(f"  [pdf {event['current']}/{event['total']}] "
+                      f"{event['folder_name']}/{event['file_name']}")
+            elif kind == "folder_done":
+                fr = event["folder_result"]
+                n = sum(len(pr.get("invoices", [])) for pr in fr["pdf_results"])
+                print(f"    {fr['name']}: {n} invoice(s)")
+            elif kind == "quarantine":
+                print(f"    QUARANTINED: {event['folder_name']} "
+                      f"(original -> {event.get('copied_to')})")
+            elif kind == "batch_done":
+                b = event["batch"]
+                print(f"    BATCH {b['batch_id']} -> {b['kofax_email']} "
+                      f"({b['invoice_count']} invoice(s))")
+            elif kind == "routing_emails_done":
+                sent = sum(1 for b in event["batches"] if b.get("email_sent"))
+                failed = len(event["batches"]) - sent
+                print(f"    Routing emails: {sent} sent, {failed} failed")
+            elif kind == "error":
+                print(f"\nERROR: {event['message']}")
+            elif kind == "complete":
+                final = event
+        if final:
+            total = sum(len(pr.get("invoices", []))
+                       for fr in final["results"] for pr in fr["pdf_results"])
+            print(f"\nDONE: {total} invoice(s) across "
+                  f"{len(final['results'])} folder(s)")
+            if final.get("report_path"):
+                print(f"Report: {final['report_path']}")
+            if final.get("batch_report_path"):
+                print(f"Batch report: {final['batch_report_path']}")
+            if final.get("email_stats"):
+                s = final["email_stats"]
+                print(f"Emails: {s['total_successful']} successful, "
+                      f"{s['total_failed']} failed/blocked "
+                      f"(of {s['total_invoices']} total)")
+        return final
+
+    if MODE == "single_pdf":
+        pdf_path = sys.argv[1] if len(sys.argv) > 1 else SINGLE_PDF
+        result = process_invoice_pdf(pdf_path)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+
+        # Excel Report
+        # from report_builder import flatten_single_pdf_result, save_excel_report
+        # report_rows = flatten_single_pdf_result(result)
+        # if report_rows:
+        #     report_path = str(Path(result["output_dir"]) / "invoice_report.xlsx")
+        #     save_excel_report(report_rows, report_path)
+        #     print(f"\nExcel report written to: {report_path}")
+        # else:
+        #     print("\nNo invoices extracted -- no report written.")
+
+    elif MODE == "pdf_folder":
+        source = sys.argv[1] if len(sys.argv) > 1 else PDF_FOLDER
+        folders = scan_pdf_folder(source)
+        print(f"Found {len(folders)} folder(s) with PDFs under {source}")
+        out_dir = str(Path(source) / "_processed")
+        final = _drive(process_invoice_folders(folders, out_dir))
+        if final and final.get("report_bytes"):
+            report_path = Path(out_dir) / "invoice_report.xlsx"
+            report_path.write_bytes(final["report_bytes"])
+            print(f"Report: {report_path}")
+
+    elif MODE == "msg_source":
+        source = sys.argv[1] if len(sys.argv) > 1 else MSG_FOLDER
+        _drive(run_from_msg_source(source, RESULTS_ROOT))
+
+    elif MODE == "latest_run":
+        _drive(run_from_latest_extracted(RESULTS_ROOT))
+
     else:
-        pdf_path = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\GenAI-OCR-P2P-Protyping\sample-invoices\LE755 NONPO.pdf"
-
-    result = process_invoice_pdf(pdf_path)
-    print(json.dumps(result, indent=2, ensure_ascii=False))
-
-    # Excel Report
-
-    # from report_builder import flatten_single_pdf_result, save_excel_report
-    # report_rows = flatten_single_pdf_result(result)
-    # if report_rows:
-    #     report_path = str(Path(result["output_dir"]) / "invoice_report.xlsx")
-    #     save_excel_report(report_rows, report_path)
-    #     print(f"\nExcel report written to: {report_path}")
-    # else:
-    #     print("\nNo invoices extracted -- no report written.")
-    print(json.dumps(result, indent=2, ensure_ascii=False))
+        print(f"Unknown MODE {MODE!r} -- expected one of: "
+              f"single_pdf, pdf_folder, msg_source, latest_run")

@@ -77,7 +77,7 @@ from rapidfuzz import fuzz, process
 
 # --- Config ----------------------------------------------------------------
 SENSITIVE_THRESHOLD = 90
-LE_THRESHOLD = 85
+LE_THRESHOLD = 80
 
 # partial_ratio guard for sensitive matcher -- both names must be at least
 # this long before partial_ratio is allowed to contribute.
