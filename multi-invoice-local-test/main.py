@@ -46,8 +46,6 @@ from matcher_le import SensitiveMatcher, LEMatcher,LE_THRESHOLD
 from vietnam_renamer import (
     VietnamSupplierMatcher, GoogleTranslateTranslator, process_vietnam_invoice, QwenTranslator
 )
-from dotenv import load_dotenv
-load_dotenv()
 
 translator = QwenTranslator()
 
@@ -66,7 +64,7 @@ ENABLE_EXCEL_ATTACHMENT = False
 # actually sent. Flip to False only once email_sender.SENDER_EMAIL /
 # ROUTING_CC / REPORT_AGENT_EMAIL are filled in with real addresses and
 # you've reviewed a dry-run's log output.
-EMAIL_DRY_RUN = True
+EMAIL_DRY_RUN = False
 
 
 SENSITIVE_REFERENCE_PATH = r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\p2p-prefinal-version\Supporting Documents\sensitive_reference.json"
@@ -830,7 +828,7 @@ def _run_extracted(run: dict, extracted_root: str):
                             batches=batch_complete["batches"])
 
                 # --- Send emails: Kofax routing, then the human-agent report ---
-                smtp_password = "Banana@1026"# os.environ.get("SMTP_PASSWORD")
+                smtp_password = "Genpact@147258ab" #os.environ.get("SMTP_PASSWORD")
                 if smtp_password is None:
                     log.warning("SMTP_PASSWORD not set in the environment -- "
                               "skipping ALL email sending for this run "
@@ -841,6 +839,7 @@ def _run_extracted(run: dict, extracted_root: str):
                         sender=email_sender.SENDER_EMAIL,
                         password=smtp_password,
                         cc=email_sender.ROUTING_CC,
+                        login_account=email_sender.LOGIN_ACCOUNT,
                         dry_run=EMAIL_DRY_RUN,
                     )
                     yield {"type": "routing_emails_done", "batches": annotated_batches}
@@ -857,6 +856,7 @@ def _run_extracted(run: dict, extracted_root: str):
                         sender=email_sender.SENDER_EMAIL,
                         password=smtp_password,
                         cc=email_sender.ROUTING_CC,
+                        login_account=email_sender.LOGIN_ACCOUNT,
                         run_label=run["run_name"],
                         dry_run=EMAIL_DRY_RUN,
                     )

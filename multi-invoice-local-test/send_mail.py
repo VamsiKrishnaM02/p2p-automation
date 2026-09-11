@@ -1,81 +1,3 @@
-# import os
-# import re
-# import smtplib
-# from email import encoders
-# from email.mime.base import MIMEBase
-# from email.mime.multipart import MIMEMultipart
-# from email.mime.text import MIMEText
-
-# def send_mail(sender: str, receiver: str, password: str, subject: str = "", body: str = "", attachment_list: list = None, cc: str = None):
-#     """
-#     Sends an email using the internal SMTP server.
-#     """
-#     try:
-#         msg = MIMEMultipart()
-#         msg["Subject"] = subject
-#         msg["From"] = sender
-#         msg["To"] = receiver
-        
-#         # Build recipient list
-#         rcpts = [receiver]
-#         if cc:
-#             msg["Cc"] = cc
-#             rcpts.extend([c.strip() for c in cc.split(",") if c.strip()])
-            
-#         # Attach HTML body
-#         if body:
-#             msg.attach(MIMEText(body, 'html'))
-
-#         # Process attachments
-#         if attachment_list:
-#             for filepath in attachment_list:
-#                 if os.path.isfile(filepath):
-#                     file_name = os.path.basename(filepath)
-                    
-#                     with open(filepath, 'rb') as file:
-#                         attachment = MIMEBase('application', 'octet-stream')
-#                         attachment.set_payload(file.read())
-                        
-#                     encoders.encode_base64(attachment)
-                    
-#                     # Sanitize the filename
-#                     basename = re.sub(r'[^a-zA-Z0-9.]', '_', file_name)
-#                     if not basename.split(".")[0]:
-#                         basename = (subject[:6] if subject else "attached") + ".pdf"
-                        
-#                     attachment.add_header('Content-Disposition', f'attachment; filename="{basename}"')
-#                     msg.attach(attachment)
-
-#         # Connect to server and send
-#         smtp_server = "smtpauth.intel.com"
-#         smtp_port = 587
-        
-#         with smtplib.SMTP(smtp_server, smtp_port) as server:
-#             server.starttls()  # Secure the connection
-#             server.login(sender, password)
-#             server.sendmail(sender, rcpts, msg.as_string())
-            
-#         print(f"Email successfully sent to {receiver}!")
-        
-#     except Exception as e:
-#         print(f"Exception occurred while sending mail: {e}")
-
-# if __name__ == "__main__":
-#     # Example usage:
-#     # Use environment variables for passwords instead of hardcoding them in plain text.
-#     my_email = "vamsix.modala@intel.com"
-#     my_password = os.environ.get("SMTP_PASSWORD") or "Banana@1026" 
-    
-#     send_mail(
-#         sender=my_email,
-#         receiver="vamsix.modala@intel.com",
-#         password=my_password,
-#         subject="Invoice Pipeline Status",
-#         body="<h1>Run Complete</h1><p>The processing has finished successfully.</p>",
-#         attachment_list=[r"C:\Users\vmodalax\OneDrive - Intel Corporation\Desktop\msg-result\2026-09-10\run_13-16-08\02_blocked\FW_ _HRC_ _PI_ Deloitte - Hard Copy of Invoices ILH LE 755_ 750 and 870_ Soft Copy of Invoice ILH LE 778 - August 2026.msg"]
-#     )
-
-
 """
 send_mail.py -- Core SMTP send primitive, used by email_sender.py for both
 the per-batch Kofax routing emails and the human-agent report email.
@@ -118,15 +40,29 @@ SMTP_PORT = 587
 
 def send_mail(sender: str, receiver: str, password: str, subject: str = "",
              body: str = "", attachment_list: Optional[List[str]] = None,
-             cc: Optional[str] = None, dry_run: bool = False) -> dict:
+             cc: Optional[str] = None, dry_run: bool = False,
+             login_account: Optional[str] = None) -> dict:
     """
     Sends an email using the internal SMTP server.
 
+    login_account: the account that actually AUTHENTICATES to the SMTP
+    server (server.login()). Defaults to `sender` when not given, so
+    every existing single-account caller is completely unchanged.
+
+    Pass login_account explicitly to send AS a different address than the
+    one that logs in -- e.g. login_account="new_lead@intel.com" while
+    sender="gspo@intel.com". This mirrors the legacy system's proven
+    behavior for this exact relay: the authenticated account is used
+    ONLY for server.login(); both the "From" header AND the SMTP
+    envelope-from (server.sendmail()'s first argument) use `sender`, not
+    login_account. That does mean the envelope-from won't match the
+    authenticated login -- if smtpauth.intel.com's permissions ever
+    change to require them to match, this is the first place to look.
+
     Returns {"sent": bool, "error": str or None, "dry_run": bool}.
-    Never raises -- any failure (missing attachment aside, which is just
-    skipped with a warning) is caught and reported in the return dict.
     """
     attached_names: List[str] = []
+    login_account = login_account or sender
     try:
         msg = MIMEMultipart()
         msg["Subject"] = subject
@@ -167,17 +103,19 @@ def send_mail(sender: str, receiver: str, password: str, subject: str = "",
                 attached_names.append(basename)
 
         if dry_run:
-            log.info("[DRY RUN] to=%s cc=%s subject=%r attachments=%s",
-                     receiver, cc, subject, attached_names)
+            log.info("[DRY RUN] to=%s cc=%s subject=%r attachments=%s "
+                     "(From=%s, login_account=%s)",
+                     receiver, cc, subject, attached_names, sender, login_account)
             return {"sent": True, "error": None, "dry_run": True}
 
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
             server.starttls()
-            server.login(sender, password)
+            server.login(login_account, password)
             server.sendmail(sender, rcpts, msg.as_string())
 
-        log.info("Email sent to %s (cc=%s, subject=%r, %d attachment(s))",
-                 receiver, cc, subject, len(attached_names))
+        log.info("Email sent to %s (From=%s, login_account=%s, cc=%s, "
+                "subject=%r, %d attachment(s))",
+                receiver, sender, login_account, cc, subject, len(attached_names))
         return {"sent": True, "error": None, "dry_run": False}
 
     except Exception as e:
@@ -190,13 +128,12 @@ if __name__ == "__main__":
                         format="%(asctime)s | %(levelname)-7s | %(message)s")
 
     my_email = "vamsix.modala@intel.com"
-    my_password = "Banana@1026"
-
-    # if not my_password:
-    #     raise SystemExit(
-    #         "SMTP_PASSWORD is not set in the environment -- no fallback "
-    #         "password is stored in code. Set it and try again."
-    #     )
+    my_password = os.environ.get("SMTP_PASSWORD")
+    if not my_password:
+        raise SystemExit(
+            "SMTP_PASSWORD is not set in the environment -- no fallback "
+            "password is stored in code. Set it and try again."
+        )
 
     result = send_mail(
         sender=my_email,

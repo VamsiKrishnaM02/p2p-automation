@@ -47,9 +47,11 @@ log = logging.getLogger("email_sender")
 # Config -- fixed constants, same pattern as routing.CONFIG_CODE. Fill in
 # real values before this goes anywhere near production.
 # ---------------------------------------------------------------------------
-SENDER_EMAIL = "vamsix.modala@intel.com"     
-ROUTING_CC = "alekhyax.vemuri@intel.com"  
-REPORT_AGENT_EMAIL = "vamsix.modala@intel.com"   
+SENDER_EMAIL = "gspo_ocr.invoice@intel.com"  # TODO: confirm real "From" address
+LOGIN_ACCOUNT = "sandeep3x.kumar@intel.com"     # if different from SENDER_EMAIL -
+                                                      
+ROUTING_CC = "krishnax.bommisetty@intel.com,vamsix.modala@intel.com,sandeep3x.kumar@intel.com,alekhyax.vemuri@intel.com"  # TODO: confirm real DL
+REPORT_AGENT_EMAIL = "krishnax.bommisetty@intel.com"          # TODO: confirm real human agent address
 
 
 # ---------------------------------------------------------------------------
@@ -57,10 +59,15 @@ REPORT_AGENT_EMAIL = "vamsix.modala@intel.com"
 # ---------------------------------------------------------------------------
 def send_routing_emails(batches: List[dict], sender: str, password: str,
                         cc: Optional[str] = None,
+                        login_account: Optional[str] = None,
                         dry_run: bool = False) -> List[dict]:
     """Send one attachment-only email per batch. Mutates and returns
     `batches` -- each dict gains "email_sent" (bool) and "email_error"
-    (str or None)."""
+    (str or None).
+
+    login_account: pass this when `sender` (the "From" address, e.g.
+    gspo) isn't the account that actually authenticates -- see
+    send_mail.send_mail()'s docstring. Defaults to `sender` if omitted."""
     for batch in batches:
         staged_dir = Path(batch["staged_dir"])
         pdfs = sorted(str(p) for p in staged_dir.glob("*.pdf"))
@@ -78,6 +85,7 @@ def send_routing_emails(batches: List[dict], sender: str, password: str,
             body="",
             attachment_list=pdfs,
             cc=cc,
+            login_account=login_account,
             dry_run=dry_run,
         )
         batch["email_sent"] = result["sent"]
@@ -225,8 +233,10 @@ def send_report_email(stats: dict, quarantine_log: List[dict],
                       invoice_report_path: str, batch_report_path: str,
                       run_root: str, agent_email: str, sender: str,
                       password: str, cc: Optional[str] = None,
+                      login_account: Optional[str] = None,
                       run_label: str = "", dry_run: bool = False) -> dict:
-    """Send the single end-of-run summary email to the human agent."""
+    """Send the single end-of-run summary email to the human agent.
+    login_account: see send_routing_emails()'s docstring."""
     zip_path = _build_report_zip(quarantine_log, stats["failed_batches"], run_root)
 
     attachments = [invoice_report_path, batch_report_path]
@@ -244,6 +254,7 @@ def send_report_email(stats: dict, quarantine_log: List[dict],
         body=body,
         attachment_list=attachments,
         cc=cc,
+        login_account=login_account,
         dry_run=dry_run,
     )
     if not result["sent"]:
